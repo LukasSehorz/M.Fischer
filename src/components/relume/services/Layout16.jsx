@@ -4,9 +4,9 @@ import React, { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 const points = [
-  "Eigenes, ausgebildetes Fachpersonal – kein Rückgriff auf Werklohnfirmen",
-  "Umfangreicher Maschinen- und Fuhrpark für alle Gewerke",
-  "Direkte Kommunikation mit der Geschäftsführung",
+  "Der Inhaber arbeitet persönlich auf jeder Baustelle",
+  "Moderner Maschinenpark für Tiefbau, Abbruch und Erdarbeiten",
+  "Direkte Kommunikation – kein Vermittler, keine Überraschungen",
 ];
 
 // Helper: split text into char spans
@@ -94,7 +94,7 @@ export function Layout16() {
       // Heading: word-by-word lift from below
       let headingWords = [];
       if (headingRef.current) {
-        headingWords = splitWords(headingRef.current, "Kompetenz und Terminsicherheit – garantiert.");
+        headingWords = splitWords(headingRef.current, "Kompetenz und Termintreue – garantiert.");
         gsap.set(headingWords, { yPercent: 110 });
       }
 
@@ -160,15 +160,12 @@ export function Layout16() {
 
   return (
     <section ref={sectionRef} className="relative px-[5%] py-16 md:py-24 lg:py-28 overflow-hidden">
-      {/* Background video */}
-      <video
+      {/* Background image */}
+      <img
         ref={videoRef}
-        src="/videos/video5.mp4"
+        src="/images/bild11.png"
+        alt="M. Fischer Maschinenbetrieb"
         className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
         style={{ willChange: "transform, filter" }}
       />
       {/* Dark overlay */}
@@ -178,29 +175,29 @@ export function Layout16() {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p ref={eyebrowRef} className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
-              Warum Schmid-Bau
+            <p ref={eyebrowRef} className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em]" style={{ color: "#8B1A1A" }}>
+              Warum M. Fischer
             </p>
             <h2
               ref={headingRef}
               className="mb-5 font-heading text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl"
             >
-              Kompetenz und Terminsicherheit – garantiert.
+              Kompetenz und Termintreue – garantiert.
             </h2>
             <p
               ref={paraRef}
               data-text="Durch geschultes Personal, neueste Technik und einen umfangreichen Maschinenpark bieten wir Ihnen ein Know-how, das Kompetenz und Terminsicherheit garantiert. Hoher Qualitätsstandard der verarbeiteten Materialien und erfahrene Fachkräfte bürgen für zuverlässige Ausführung."
               className="mb-6 font-body text-base leading-relaxed text-white/90 md:text-lg"
             >
-              Durch geschultes Personal, neueste Technik und einen umfangreichen
-              Maschinenpark bieten wir Ihnen ein Know-how, das Kompetenz und
-              Terminsicherheit garantiert. Hoher Qualitätsstandard der verarbeiteten
-              Materialien und erfahrene Fachkräfte bürgen für zuverlässige Ausführung.
+              Als Einmannbetrieb arbeite ich persönlich auf jeder Baustelle.
+              Mit modernem Maschinenpark und jahrelanger Erfahrung in Tiefbau,
+              Abbruch und Außenanlagen biete ich Qualität und Termintreue,
+              die Sie direkt erleben – nicht nur versprochen bekommen.
             </p>
             <ul ref={listRef} className="mb-8 space-y-4">
               {points.map((p) => (
                 <li key={p} className="flex items-start gap-3 font-body text-sm text-white/90 md:text-base">
-                  <span data-dot className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-hoser-gold" />
+                  <span data-dot className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: "#8B1A1A" }} />
                   {p}
                 </li>
               ))}
@@ -208,10 +205,10 @@ export function Layout16() {
             <a
               ref={ctaRef}
               href="/kontakt"
-              className="inline-flex items-center gap-2 border border-white/60 px-7 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:border-hoser-gold hover:text-hoser-gold"
+              className="inline-flex items-center gap-2 border border-white/60 px-7 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:border-[#8B1A1A] hover:text-[#8B1A1A]"
             >
               Projekt besprechen
-              <span className="text-hoser-gold">→</span>
+              <span style={{ color: "#8B1A1A" }}>→</span>
             </a>
           </div>
         </div>

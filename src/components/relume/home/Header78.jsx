@@ -5,67 +5,7 @@ import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 export function Header78() {
   const sectionRef = useRef(null);
-  const imageRef = useRef(null);
-  const cursorRef = useRef(null);
-
-  // Smooth cursor follow via gsap.ticker — no React state, no re-renders
-  useEffect(() => {
-    const section = sectionRef.current;
-    const cursorEl = cursorRef.current;
-    const imageEl = imageRef.current;
-    if (!section || !cursorEl || !imageEl) return;
-
-    let targetX = 0;
-    let targetY = 0;
-    let smoothX = 0;
-    let smoothY = 0;
-    let active = false;
-
-    const onMove = (e) => {
-      const rect = section.getBoundingClientRect();
-      targetX = e.clientX - rect.left;
-      targetY = e.clientY - rect.top;
-      if (!active) {
-        active = true;
-        smoothX = targetX;
-        smoothY = targetY;
-        cursorEl.style.opacity = "1";
-      }
-    };
-
-    const onLeave = () => {
-      active = false;
-      cursorEl.style.opacity = "0";
-      imageEl.style.clipPath = "circle(0px at 50% 50%)";
-    };
-
-    const tick = () => {
-      if (!active) return;
-      // Lerp smoothing — feels weighty but still responsive
-      smoothX += (targetX - smoothX) * 0.22;
-      smoothY += (targetY - smoothY) * 0.22;
-      cursorEl.style.transform = `translate3d(${smoothX}px, ${smoothY}px, 0) translate(-50%, -50%)`;
-      imageEl.style.clipPath = `circle(180px at ${smoothX}px ${smoothY}px)`;
-    };
-
-    // Ensure clean initial state (guards against StrictMode double-invoke)
-    cursorEl.style.opacity = "0";
-    imageEl.style.clipPath = "circle(0px at 50% 50%)";
-
-    section.addEventListener("mousemove", onMove);
-    section.addEventListener("mouseleave", onLeave);
-    gsap.ticker.add(tick);
-
-    return () => {
-      section.removeEventListener("mousemove", onMove);
-      section.removeEventListener("mouseleave", onLeave);
-      gsap.ticker.remove(tick);
-      // Reset DOM state so re-mount starts clean (StrictMode / SPA navigation)
-      active = false;
-      cursorEl.style.opacity = "0";
-      imageEl.style.clipPath = "circle(0px at 50% 50%)";
-    };
-  }, []);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const scope = sectionRef.current;
@@ -139,60 +79,48 @@ export function Header78() {
     };
   }, []);
 
+  // Start video only after the intro is done (same gate as the GSAP animations)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => video.play().catch(() => {});
+
+    if (window.__schmidIntroDone === true) {
+      playVideo();
+    } else {
+      window.addEventListener("schmid-intro-complete", playVideo, { once: true });
+      return () => window.removeEventListener("schmid-intro-complete", playVideo);
+    }
+  }, []);
+
   return (
     <section
       id="hero-section"
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ height: "calc(100vh - 4.5rem)", cursor: "none" }}
+      style={{ height: "calc(100vh - 4.5rem)" }}
     >
-      {/* ── Bild 1: Rohbau — vollflächiger Hintergrund ── */}
-      <img
-        src="/images/bild1.png"
-        alt="Gebäude im Rohbau"
+      {/* ── Video: Hintergrund ── */}
+      <video
+        ref={videoRef}
         className="hero-bg-img absolute inset-0 h-full w-full object-cover object-center"
-        style={{ willChange: "transform", filter: "saturate(0.92) brightness(1.04)" }}
-      />
+        style={{ willChange: "transform", filter: "saturate(0.85) brightness(0.9)" }}
+        muted
+        playsInline
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Dunkler Verlauf — links dicht, rechts ausblendend */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(4,13,28,0.93) 0%, rgba(4,13,28,0.80) 38%, rgba(4,13,28,0.45) 65%, rgba(4,13,28,0.12) 100%)",
+            "linear-gradient(to right, rgba(18,18,18,0.93) 0%, rgba(18,18,18,0.80) 38%, rgba(18,18,18,0.45) 65%, rgba(18,18,18,0.12) 100%)",
         }}
       />
 
-      {/* ── Bild 2: Fertig — Hover-Reveal (clip-path driven directly via DOM) ── */}
-      <img
-        ref={imageRef}
-        src="/images/bild2.png"
-        alt="Fertiggestelltes Gebäude"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-        style={{
-          clipPath: "circle(0px at 50% 50%)",
-          willChange: "clip-path",
-        }}
-      />
-
-      {/* ── Custom Cursor: outer ring + inner dot ── */}
-      <div
-        ref={cursorRef}
-        className="pointer-events-none absolute left-0 top-0 z-20 flex items-center justify-center"
-        style={{
-          width: 48,
-          height: 48,
-          opacity: 0,
-          transition: "opacity 0.25s ease",
-          willChange: "transform",
-        }}
-        aria-hidden="true"
-      >
-        {/* Outer ring */}
-        <span className="absolute inset-0 rounded-full border" style={{ borderColor: "rgba(90,172,207,0.7)" }} />
-        {/* Inner dot */}
-        <span className="block h-1.5 w-1.5 rounded-full" style={{ background: "#5AACCF" }} />
-      </div>
 
 
       {/* ── Text-Inhalt ── */}
@@ -200,10 +128,10 @@ export function Header78() {
 
         {/* Eyebrow */}
         <div className="mb-12 flex items-center gap-4">
-          <span className="hero-eyebrow-line h-px w-10 flex-shrink-0" style={{ background: "#5AACCF" }} />
+          <span className="hero-eyebrow-line h-px w-10 flex-shrink-0" style={{ background: "#8B1A1A" }} />
           <div style={{ overflow: "hidden" }}>
-            <p className="hero-eyebrow-inner font-body text-xs font-semibold uppercase tracking-[0.28em]" style={{ color: "#5AACCF" }}>
-              Berglern · Gegründet 1992
+            <p className="hero-eyebrow-inner font-body text-xs font-semibold uppercase tracking-[0.28em]" style={{ color: "#8B1A1A" }}>
+              Rott am Inn · Gegründet 2020
             </p>
           </div>
         </div>
@@ -215,57 +143,46 @@ export function Header78() {
         >
           <span className="block" style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
             <span className="hero-headline-inner block">
-              Bauen,{" "}
-              <em className="italic" style={{ color: "#5AACCF" }}>das bleibt.</em>
+              Qualität aus{" "}
+              <em className="italic" style={{ color: "#8B1A1A", whiteSpace: "nowrap" }}>erster Hand.</em>
             </span>
           </span>
           <span className="block" style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
             <span className="hero-headline-inner block">
-              Seit 1992.
+              Persönlich vor Ort.
             </span>
           </span>
         </h1>
 
         {/* Body */}
         <p className="hero-body mb-16 max-w-[440px] font-body text-base leading-relaxed text-white/70 md:text-lg">
-          Schlüsselfertiges Bauen, Rohbau, Sanierung, Tiefbau und mehr aus Berglern.
-          Schmid-Bau GmbH steht seit 1992 für Persönlichkeit, Beständigkeit
-          und Projekte für Generationen.
+          Kein Subunternehmer – Markus Fischer steht persönlich auf jeder Baustelle.
+          Tiefbau, Abbruch, Erdarbeiten und Außenanlagen im Inntal und Chiemgau.
         </p>
 
         {/* CTAs — both get the fill-on-hover effect */}
         <div className="flex flex-wrap gap-3">
           <a
             href="/kontakt"
-            className="hero-cta group inline-flex items-center gap-3 border border-white/40 bg-transparent px-7 py-4 font-body text-sm font-semibold uppercase tracking-[0.14em] text-white/85 transition-all duration-300 hover:bg-white hover:border-white hover:text-[#0E2A6B]"
+            className="hero-cta group inline-flex items-center gap-3 border border-white/40 bg-transparent px-7 py-4 font-body text-sm font-semibold uppercase tracking-[0.14em] text-white/85 transition-all duration-300 hover:bg-white hover:border-white hover:text-[#8B1A1A]"
           >
             Projekt anfragen
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="/projekte"
-            className="hero-cta group inline-flex items-center gap-3 border border-white/40 bg-transparent px-7 py-4 font-body text-sm font-semibold uppercase tracking-[0.14em] text-white/85 transition-all duration-300 hover:bg-white hover:border-white hover:text-[#0E2A6B]"
+            href="https://wa.me/491754322110"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-cta group inline-flex items-center gap-3 border border-white/40 bg-transparent px-7 py-4 font-body text-sm font-semibold uppercase tracking-[0.14em] text-white/85 transition-all duration-300 hover:bg-white hover:border-white hover:text-[#25D366]"
           >
-            Referenzen ansehen
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <svg className="h-4 w-4 flex-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+            </svg>
+            WhatsApp schreiben
           </a>
         </div>
       </div>
 
-      {/* Scroll-Indikator — CSS fade-in, unabhängig von GSAP */}
-      <div
-        className="absolute bottom-8 left-[6%] z-10 hidden lg:flex items-center gap-3"
-        style={{ animation: "heroScrollFadeIn 1s ease 0.8s both" }}
-      >
-        <span className="h-px w-8" style={{ background: "rgba(90,172,207,0.4)" }} />
-        <span className="font-body text-xs uppercase tracking-[0.22em]" style={{ color: "rgba(90,172,207,0.65)" }}>Scroll</span>
-      </div>
-      <style>{`
-        @keyframes heroScrollFadeIn {
-          from { opacity: 0; transform: translateX(-12px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-      `}</style>
     </section>
   );
 }

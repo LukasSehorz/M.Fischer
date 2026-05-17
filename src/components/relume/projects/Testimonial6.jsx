@@ -6,22 +6,25 @@ import { gsap } from "../../../utils/gsap";
 
 const testimonials = [
   {
-    quote: "Jedes Detail wurde sorgfältig umgesetzt, ohne Abstriche – und das Haus war pünktlich fertig, genau wie versprochen.",
-    name: "Klaus Müller",
-    role: "Bauherr, München",
-    img: "/images/hero-aerial-construction.jpg",
+    quote: "Alles super gelaufen, vielen Dank",
+    name: "Meisl",
+    role: "Gartengestaltung · Eiselfing",
+    date: "Aug 2023",
+    initials: "M",
   },
   {
-    quote: "Wir waren skeptisch wegen der Sanierungskosten – aber die Festpreisgarantie hat uns vom ersten Tag an Sicherheit gegeben.",
-    name: "Maria Hoffmann",
-    role: "Eigentümerin, Augsburg",
-    img: "/images/craftsmen-stone-facade.jpg",
+    quote: "Ich kann Herrn Fischer nur bestens weiterempfehlen!! Ein sehr freundlicher, kompetenter Handwerker, der ohne großen Umstände unsere Aufhängung in der Garage montiert hat – schnell und zuverlässig.",
+    name: "Gabriele",
+    role: "Handwerksdienste · Schleching",
+    date: "Nov 2024",
+    initials: "G",
   },
   {
-    quote: "Regionales Know-how, professionelle Ausführung und ein Team, das wirklich zuhört.",
-    name: "Thomas Weber",
-    role: "Bauherr, Ingolstadt",
-    img: "/images/villa-twilight.jpg",
+    quote: "Ich habe eine sehr gute Erfahrung gehabt und bin sehr zufrieden. Alles top, schnell und professionell gemacht! Würde ich sehr gern Herrn Fischer beauftragen und weiter empfehlen!",
+    name: "Pateyuk",
+    role: "Montagearbeiten · Oberaudorf",
+    date: "Jan 2025",
+    initials: "P",
   },
 ];
 
@@ -54,7 +57,7 @@ export function Testimonial6() {
       // Heading
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Was unsere Kunden sagen")
+        ? splitWords(headingRef.current, "Was meine Kunden sagen")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
 
@@ -123,7 +126,7 @@ export function Testimonial6() {
 
         {/* Heading */}
         <div className="mb-14 md:mb-18">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
             Kundenstimmen
           </p>
           <h2
@@ -131,7 +134,7 @@ export function Testimonial6() {
             className="font-heading font-bold leading-tight tracking-tight text-white"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Was unsere Kunden sagen
+            Was meine Kunden sagen
           </h2>
         </div>
 
@@ -141,20 +144,20 @@ export function Testimonial6() {
             <div
               key={t.name}
               ref={(el) => (cardsRef.current[idx] = el)}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 p-8 backdrop-blur-md transition-all duration-500 hover:border-[#5AACCF]/40"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 p-8 backdrop-blur-md transition-all duration-500 hover:border-[#8B1A1A]/40"
               style={{ background: "rgba(255,255,255,0.05)" }}
             >
               {/* Decorative quote mark */}
               <span
                 data-quote-mark
-                className="absolute right-6 top-4 font-heading font-bold leading-none text-[#5AACCF]/10 transition-all duration-500 group-hover:text-[#5AACCF]/20"
+                className="absolute right-6 top-4 font-heading font-bold leading-none text-[#8B1A1A]/10 transition-all duration-500 group-hover:text-[#8B1A1A]/20"
                 style={{ fontSize: "8rem" }}
               >
                 "
               </span>
 
               {/* Stars */}
-              <div className="mb-6 flex gap-1 text-[#5AACCF]">
+              <div className="mb-6 flex gap-1 text-[#8B1A1A]">
                 {[...Array(5)].map((_, i) => (
                   <BiSolidStar key={i} data-star className="size-4" />
                 ))}
@@ -170,19 +173,21 @@ export function Testimonial6() {
 
               {/* Author */}
               <div data-card-author className="flex items-center gap-4">
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  className="size-12 rounded-full object-cover ring-2 ring-[#5AACCF]/30"
-                />
+                <div
+                  className="flex size-12 shrink-0 items-center justify-center rounded-full ring-2 ring-[#8B1A1A]/30"
+                  style={{ background: "rgba(139,26,26,0.15)" }}
+                >
+                  <span className="font-heading text-base font-bold text-[#8B1A1A]">{t.initials}</span>
+                </div>
                 <div>
                   <p className="font-body text-sm font-semibold text-white">{t.name}</p>
                   <p className="font-body text-xs text-white/50">{t.role}</p>
+                  <p className="font-body text-xs text-white/30">{t.date}</p>
                 </div>
               </div>
 
               {/* Bottom gold accent */}
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#5AACCF] transition-all duration-500 group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#8B1A1A] transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>

@@ -1,30 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion, LayoutGroup } from "framer-motion";
+import { motion } from "framer-motion";
 
-const TEXT = "Schmid-Bau GmbH";
-const CHARS = TEXT.split("");
-
-const FONT = {
-  fontFamily: "Syne, sans-serif",
-  fontWeight: 700,
-  fontSize: "clamp(1.5rem, 3.2vw, 3.8rem)",
-  color: "#FFFFFF",
-  letterSpacing: "0.06em",
-  whiteSpace: "pre",
-  display: "inline-block",
-};
-
-const HOUSE_SIZE = { width: "clamp(26px, 3vw, 44px)", height: "clamp(26px, 3vw, 44px)" };
-const HOUSE_PATH = "M6 20L24 6L42 20V42H30V30H18V42H6V20Z";
-const EASE = [0.76, 0, 0.24, 1];
+const EASE   = [0.76, 0, 0.24, 1];
+const SMOOTH = [0.43, 0.13, 0.23, 0.96];
 
 export default function IntroScreen({ onComplete }) {
   const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setRevealed(true), 1000);
-    const t2 = setTimeout(onComplete, 4200);
+    const t1 = setTimeout(() => setRevealed(true), 600);
+    const t2 = setTimeout(onComplete, 2600);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [onComplete]);
 
@@ -32,81 +18,47 @@ export default function IntroScreen({ onComplete }) {
     <motion.div
       style={{
         position: "fixed", inset: 0, zIndex: 100,
-        background: "#040D1C",
+        background: "#ffffff",
         display: "flex", alignItems: "center", justifyContent: "center",
       }}
       initial={{ opacity: 1 }}
       exit={{
         clipPath: "inset(0 0 100% 0)",
-        transition: { duration: 0.7, ease: EASE },
+        transition: { duration: 0.85, ease: EASE },
       }}
     >
-      <LayoutGroup>
+      <div style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 36px)" }}>
 
-        {/* ── Phase 1: House alone, centred, draws itself ── */}
-        {!revealed && (
-          <motion.div layoutId="house">
-            <svg viewBox="0 0 48 48" fill="none" style={{ display: "block", ...HOUSE_SIZE }}>
-              <motion.path
-                d={HOUSE_PATH}
-                stroke="#FFFFFF" strokeWidth="2.5"
-                strokeLinejoin="round" strokeLinecap="round" fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{
-                  pathLength: { duration: 0.85, ease: EASE },
-                  opacity: { duration: 0.1 },
-                }}
-              />
-            </svg>
-          </motion.div>
-        )}
+        {/* Bagger – immer sichtbar, wird durch den wachsenden Text nach links geschoben */}
+        <motion.img
+          src="/images/logo-bagger.png"
+          alt="M. Fischer Bagger"
+          style={{ display: "block", height: "clamp(80px, 12vw, 160px)", width: "auto", flexShrink: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        />
 
-        {/* ── Phase 2: House slides left (layoutId), text staggered in ── */}
-        {revealed && (
-          <div style={{ display: "flex", alignItems: "center", gap: "clamp(10px, 1.4vw, 22px)" }}>
-
-            {/* Same layoutId → Framer Motion animates house from centre to here */}
-            <motion.div
-              layoutId="house"
-              transition={{ duration: 1.05, ease: EASE }}
-            >
-              <svg viewBox="0 0 48 48" fill="none" style={{ display: "block", ...HOUSE_SIZE }}>
-                <path
-                  d={HOUSE_PATH}
-                  stroke="#FFFFFF" strokeWidth="2.5"
-                  strokeLinejoin="round" strokeLinecap="round" fill="none"
-                />
-              </svg>
-            </motion.div>
-
-            {/* Text characters stagger in */}
-            <div style={{ overflow: "hidden" }}>
-              <motion.div
-                style={{ display: "flex" }}
-                initial="hidden"
-                animate="visible"
-                variants={{ visible: { transition: { staggerChildren: 0.055, delayChildren: 0.9 } } }}
-              >
-                {CHARS.map((char, i) => (
-                  <motion.span
-                    key={i}
-                    variants={{
-                      hidden: { y: "110%", opacity: 0 },
-                      visible: { y: 0, opacity: 1, transition: { duration: 0.55, ease: EASE } },
-                    }}
-                    style={FONT}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
-
+        {/* Text-Container wächst von 0 nach rechts → schiebt Bagger nach links */}
+        <motion.div
+          style={{ overflow: "hidden" }}
+          initial={{ maxWidth: 0 }}
+          animate={{ maxWidth: revealed ? 700 : 0 }}
+          transition={{ duration: 1.15, ease: SMOOTH }}
+        >
+          <div style={{ overflow: "hidden" }}>
+            <motion.img
+              src="/images/logo-text.png"
+              alt="M. Fischer Bauunternehmen"
+              style={{ display: "block", height: "clamp(44px, 6.5vw, 88px)", width: "auto" }}
+              initial={{ y: "110%" }}
+              animate={{ y: revealed ? 0 : "110%" }}
+              transition={{ duration: 0.9, ease: SMOOTH, delay: 0.2 }}
+            />
           </div>
-        )}
+        </motion.div>
 
-      </LayoutGroup>
+      </div>
     </motion.div>
   );
 }

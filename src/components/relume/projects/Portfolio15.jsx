@@ -21,68 +21,60 @@ const splitWords = (el, text) => {
   });
 };
 
-const PLACEHOLDER = "/images/placeholder.svg";
-
 const projects = [
   {
     id: "01",
-    title: "Kindergarten Erding",
-    category: "Öffentlicher Bau",
-    desc: "Neubau einer zweigruppigen Kindertagesstätte mit Außenanlage",
-    location: "Erding",
-    img: "/images/bild-kindergarten.jpg",
-    detail: "Im Auftrag der Gemeinde Erding errichtete Schmid-Bau GmbH eine moderne Kindertagesstätte mit zwei Gruppen, Technikraum und gestalteter Außenanlage. Das Gebäude erfüllt höchste energetische Anforderungen und überzeugt durch eine freundliche, funktionale Architektur. Alle Arbeiten wurden termingerecht und im vereinbarten Kostenrahmen abgeschlossen.",
-    images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+    title: "Hausanschluss & Drainage",
+    category: "Tiefbau",
+    desc: "Verlegung von Drainage- und Abwasserleitungen für ein Einfamilienhaus",
+    location: "Rott am Inn",
+    img: "/images/bild6.png",
+    detail: "Ich habe für eine Privatfamilie in Rott am Inn den kompletten Hausanschluss und die Drainage neu verlegt. Saubere Grabenführung, fachgerechte Rohrlage auf Sandbett und termingerechter Abschluss – alles aus einer Hand, ohne Subunternehmer.",
   },
   {
     id: "02",
-    title: "Feuerwehrhaus Berglern",
-    category: "Öffentlicher Bau",
-    desc: "Neubau des Feuerwehrgerätehauses mit Schulungsraum und Stellplätzen",
-    location: "Berglern",
-    img: "/images/bild-feuerwehr.jpg",
-    detail: "Für die Freiwillige Feuerwehr Berglern realisierte Schmid-Bau GmbH einen modernen Neubau mit drei Fahrzeugstellplätzen, Umkleideräumen, Schulungsraum und Außenbereich. Konstruktion und Ausbau wurden vollständig in Eigenregie koordiniert – von der Planung bis zur schlüsselfertigen Übergabe.",
-    images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+    title: "Rückbau Altgebäude",
+    category: "Abbruch",
+    desc: "Abbruch und Entsorgung eines alten Wirtschaftsgebäudes",
+    location: "Inntal und Chiemgau",
+    img: "/images/bild7.png",
+    detail: "Ich habe ein altes Wirtschaftsgebäude vollständig zurückgebaut – inklusive Fundamenten, Sortierung des Abbruchmaterials und fachgerechter Entsorgung. Das Grundstück wurde anschließend planiert und für die Neubebauung vorbereitet.",
   },
   {
     id: "03",
-    title: "Mehrzweckhalle Taufkirchen",
-    category: "Gewerbebau",
-    desc: "Neubau einer Gemeinschafts- und Veranstaltungshalle mit Bühne",
-    location: "Taufkirchen / Vils",
-    img: "/images/bild-mehrzweck.jpg",
-    detail: "In Taufkirchen an der Vils entstand eine großzügige Mehrzweckhalle für Veranstaltungen, Vereine und Gemeindezwecke. Schmid-Bau GmbH übernahm alle Rohbau- und Ausbauarbeiten. Besonderes Merkmal ist die flexible Raumaufteilung sowie die hochwertige Holz-Beton-Konstruktion der Dachkonstruktion.",
-    images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+    title: "Zufahrt & Gartengestaltung",
+    category: "Außenanlagen",
+    desc: "Neugestaltung der Außenanlagen eines Einfamilienhauses inkl. Pflasterung",
+    location: "Inntal und Chiemgau",
+    img: "/images/bild8.png",
+    detail: "Ich habe die kompletten Außenanlagen eines Einfamilienhauses neu gestaltet: Zufahrt gepflastert, Stellplätze angelegt, Rasenfläche planiert und Beetbegrenzungen gesetzt. Alles wurde nach den Wünschen der Bauherren umgesetzt.",
   },
   {
     id: "04",
-    title: "Einfamilienhaus Dorfen",
-    category: "Wohnbau",
-    desc: "Schlüsselfertiger Neubau eines Einfamilienhauses mit Carport",
-    location: "Dorfen",
-    img: "/images/bild-wohnhaus.jpg",
-    detail: "Für eine Privatfamilie in Dorfen realisierte Schmid-Bau GmbH ein schlüsselfertiges Einfamilienhaus mit Keller, Carport und Gartengestaltung. Das klare, moderne Erscheinungsbild mit hochwertigen Materialien und durchdachter Grundrissplanung wurde in enger Zusammenarbeit mit dem Bauherrn entwickelt.",
-    images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+    title: "Stellplatzanlage Wohnhaus",
+    category: "Erdarbeiten",
+    desc: "Erdarbeiten und Schotteranlage für vier Außenstellplätze",
+    location: "Bruckmühl",
+    img: "/images/bild13.png",
+    detail: "Für ein Mehrfamilienhaus in Bruckmühl habe ich vier Stellplätze neu angelegt – Erdaushub, Schotterkoffer, Vlies und Schotteroberfläche. Die Entwässerung wurde direkt mitgeplant und angeschlossen. Fertigstellung in zwei Tagen.",
   },
   {
     id: "05",
-    title: "Gewerbehalle Walpertskirchen",
-    category: "Industriebau",
-    desc: "Neubau einer Lager- und Betriebshalle mit Bürotrakt",
-    location: "Walpertskirchen",
-    img: "/images/bild-gewerbehalle.jpg",
-    detail: "Für ein regional ansässiges Unternehmen errichtete Schmid-Bau GmbH in Walpertskirchen eine Gewerbe- und Lagerhalle mit angeschlossenem Bürotrakt. Die Stahlkonstruktion bietet maximale Nutzflexibilität bei kurzer Bauzeit. Sämtliche Erschließungs- und Außenanlagenarbeiten wurden ebenfalls von Schmid-Bau übernommen.",
-    images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+    title: "Kanalgraben & Abwasseranschluss",
+    category: "Tiefbau",
+    desc: "Neuer Abwasseranschluss für einen Neubau im Inntal und Chiemgau",
+    location: "Inntal und Chiemgau",
+    img: "/images/bild14.png",
+    detail: "Ich habe den Kanalgraben für einen Neubau ausgehoben, die Abwasserleitung verlegt und den Anschluss an den öffentlichen Kanal hergestellt. Enge Abstimmung mit dem Bauherrn und der Gemeinde sorgte für reibungslosen Ablauf.",
   },
   {
     id: "06",
-    title: "Sanierung Bauernhof Buch",
-    category: "Sanierung",
-    desc: "Kernsanierung und Modernisierung eines denkmalgeschützten Bauernhofs",
-    location: "Buch am Buchrain",
-    img: "/images/bild-bauernhof.jpg",
-    detail: "In Buch am Buchrain sanierte Schmid-Bau GmbH einen historischen Bauernhof unter denkmalschutzrechtlichen Auflagen. Neue Fenster, Dämmung, Haustechnik und Fassade wurden behutsam integriert, ohne den traditionellen Charakter des Gebäudes zu beeinträchtigen. Ein anspruchsvolles Projekt, das Handwerkskunst und moderne Bautechnik vereint.",
-    images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
+    title: "Baumfällung & Rodung",
+    category: "Baumfällungen",
+    desc: "Fällung und Entsorgung mehrerer großer Bäume auf einem Privatgrundstück",
+    location: "Rott am Inn",
+    img: "/images/bild10.png",
+    detail: "Ich habe auf einem Privatgrundstück in Rott am Inn mehrere große Bäume gefällt, die Stümpfe gerodet und das gesamte Holz abtransportiert. Das Grundstück war anschließend bereit für die weitere Gartengestaltung.",
   },
 ];
 
@@ -101,7 +93,7 @@ export function Portfolio15() {
       // Eyebrow + heading reveal
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Abgeschlossene Projekte in Bayern")
+        ? splitWords(headingRef.current, "Abgeschlossene Projekte im Inntal und Chiemgau")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
 
@@ -163,7 +155,7 @@ export function Portfolio15() {
         const activeTl = gsap.timeline({ paused: true })
           .to(rowBg,      { backgroundColor: "rgba(255,255,255,0.05)", duration: 0.4, ease: "power2.out" }, 0)
           .to(goldBorder, { height: "100%", duration: 0.5, ease: "expo.out" }, 0)
-          .to(num,        { color: "#5AACCF", duration: 0.4, ease: "power2.out" }, 0);
+          .to(num,        { color: "#8B1A1A", duration: 0.4, ease: "power2.out" }, 0);
 
         // Row is "active" while the viewport's vertical center intersects it.
         // start fires when row top crosses the center going up;
@@ -190,7 +182,7 @@ export function Portfolio15() {
 
         {/* Heading */}
         <div className="mb-16 md:mb-20">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
             Referenzprojekte
           </p>
           <h2
@@ -198,7 +190,7 @@ export function Portfolio15() {
             className="font-heading font-bold leading-tight tracking-tight text-white"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Abgeschlossene Projekte in Bayern
+            Abgeschlossene Projekte im Inntal und Chiemgau
           </h2>
         </div>
 
@@ -221,7 +213,7 @@ export function Portfolio15() {
                 {/* Gold left border */}
                 <div
                   data-row-gold-border
-                  className="absolute left-0 top-0 w-[3px] bg-[#5AACCF]"
+                  className="absolute left-0 top-0 w-[3px] bg-[#8B1A1A]"
                   style={{ height: "0%" }}
                 />
 
@@ -237,7 +229,7 @@ export function Portfolio15() {
 
                   {/* Title + Category */}
                   <div data-row-meta>
-                    <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+                    <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
                       {p.category}
                     </p>
                     <h3 className="font-heading text-2xl font-bold text-white md:text-3xl">
@@ -251,7 +243,7 @@ export function Portfolio15() {
                       {p.desc}
                     </p>
                     <div className="mt-3 flex items-center gap-2">
-                      <div className="h-px w-4 bg-[#5AACCF]/50" />
+                      <div className="h-px w-4 bg-[#8B1A1A]/50" />
                       <p className="font-body text-xs uppercase tracking-[0.2em] text-white/50">
                         {p.location}
                       </p>
@@ -270,11 +262,11 @@ export function Portfolio15() {
                     <button
                       data-row-btn
                       onClick={() => toggle(i)}
-                      className="flex items-center justify-between border border-white/20 px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-white/80 transition-all duration-300 hover:border-[#5AACCF] hover:text-[#5AACCF]"
+                      className="flex items-center justify-between border border-white/20 px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-white/80 transition-all duration-300 hover:border-[#8B1A1A] hover:text-[#8B1A1A]"
                     >
                       <span>{expanded === i ? "Schließen" : "Mehr erfahren"}</span>
                       <span
-                        className="ml-3 text-[#5AACCF] transition-transform duration-300"
+                        className="ml-3 text-[#8B1A1A] transition-transform duration-300"
                         style={{ transform: expanded === i ? "rotate(45deg)" : "rotate(0deg)" }}
                       >
                         +
@@ -290,38 +282,17 @@ export function Portfolio15() {
                 style={{ maxHeight: expanded === i ? "800px" : "0px" }}
               >
                 <div className="border-t border-white/10 bg-black/30 px-6 py-10 backdrop-blur-sm md:pl-[calc(60px+1.5rem)]">
-                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                    {/* Info text */}
-                    <div>
-                      <p className="mb-3 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
-                        Projektbeschreibung
-                      </p>
-                      <p className="font-body text-base leading-relaxed text-white/80">
-                        {p.detail}
-                      </p>
-                      <div className="mt-6 flex items-center gap-3">
-                        <div className="h-px w-6 bg-[#5AACCF]/60" />
-                        <span className="font-body text-xs uppercase tracking-[0.2em] text-[#5AACCF]/70">
-                          {p.category} · {p.location}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Image grid */}
-                    <div
-                      className="grid gap-2"
-                      style={{ gridTemplateColumns: `repeat(${Math.min(p.images.length, 2)}, 1fr)` }}
-                    >
-                      {p.images.map((img, j) => (
-                        <div key={j} className="overflow-hidden rounded-sm aspect-[4/3]">
-                          <img
-                            src={img}
-                            alt={`${p.title} ${j + 1}`}
-                            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                          />
-                        </div>
-                      ))}
-                    </div>
+                  <p className="mb-3 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
+                    Projektbeschreibung
+                  </p>
+                  <p className="font-body text-base leading-relaxed text-white/80 max-w-2xl">
+                    {p.detail}
+                  </p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="h-px w-6 bg-[#8B1A1A]/60" />
+                    <span className="font-body text-xs uppercase tracking-[0.2em] text-[#8B1A1A]/70">
+                      {p.category} · {p.location}
+                    </span>
                   </div>
                 </div>
               </div>

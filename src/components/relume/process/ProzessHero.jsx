@@ -27,7 +27,7 @@ export function ProzessHero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden flex items-start">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden flex items-start" style={{ backgroundColor: "#121212" }}>
       {/* Inline keyframes for the scroll-dot */}
       <style>{`
         @keyframes prozess-hero-dot-move {
@@ -43,8 +43,8 @@ export function ProzessHero() {
 
       {/* Background image */}
       <img
-        src="/images/prozess-hero.jpg"
-        alt="Schmid-Bau GmbH – Prozess"
+        src="/images/bild23.png"
+        alt="M. Fischer Maschinenbetrieb – Prozess"
         className="prozess-hero-bg absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform" }}
       />
@@ -52,17 +52,17 @@ export function ProzessHero() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(14,42,107,0.82) 0%, rgba(14,42,107,0.60) 40%, rgba(14,42,107,0.25) 75%, rgba(14,42,107,0.05) 100%)",
+          background: "linear-gradient(to right, rgba(18,18,18,0.97) 0%, rgba(18,18,18,0.88) 40%, rgba(18,18,18,0.60) 70%, rgba(18,18,18,0.25) 100%)",
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 px-[6%] pt-32 pb-24 md:pt-36 lg:pt-44 md:max-w-[55%] lg:max-w-[50%]">
         <div className="mb-10 flex items-center gap-4">
-          <span className="prozess-hero-line h-px w-10 flex-shrink-0 bg-hoser-gold" />
+          <span className="prozess-hero-line h-px w-10 flex-shrink-0 bg-[#8B1A1A]" />
           <div style={{ overflow: "hidden" }}>
             <p className="prozess-hero-eyebrow font-body text-xs font-semibold uppercase tracking-[0.25em] text-white/50">
-              Unser Weg · Von der Idee bis zur Übergabe
+              Mein Weg · Von der Anfrage bis zur Übergabe
             </p>
           </div>
         </div>
@@ -71,11 +71,16 @@ export function ProzessHero() {
           className="prozess-hero-title mb-10 font-heading font-bold tracking-tight text-white"
           style={{ fontSize: "clamp(2.8rem, 5.5vw, 6rem)", lineHeight: 1.04 }}
         >
-          {["Ihr Projekt.", "Unser Prozess."].map((line, i) => (
-            <span key={i} className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
-              <span className="block">{line}</span>
+          <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
+            <span className="block">
+              Ihr <span style={{ color: "#000000" }}>Projekt.</span>
             </span>
-          ))}
+          </span>
+          <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
+            <span className="block" style={{ whiteSpace: "nowrap" }}>
+              Mein <span style={{ color: "#8B1A1A" }}>Prozess.</span>
+            </span>
+          </span>
         </h1>
 
         <p className="prozess-hero-sub max-w-[400px] font-body text-base leading-relaxed text-white/55 md:text-lg">
@@ -90,14 +95,14 @@ export function ProzessHero() {
           className="prozess-hero-cta group mt-10 flex items-center gap-5 cursor-pointer focus:outline-none lg:hidden"
           aria-label="Zum Prozess scrollen"
         >
-          <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-white/15 transition-colors duration-500 group-hover:border-hoser-gold">
+          <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-white/15 transition-colors duration-500 group-hover:border-[#8B1A1A]">
             {/* Hover ring */}
             <span
-              className="absolute inset-0 rounded-full border border-hoser-gold opacity-0 scale-125 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
+              className="absolute inset-0 rounded-full border border-[#8B1A1A] opacity-0 scale-125 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
               aria-hidden="true"
             />
             <svg
-              className="h-4 w-4 text-white/80 transition-all duration-500 group-hover:text-hoser-gold group-hover:translate-y-0.5"
+              className="h-4 w-4 text-white/80 transition-all duration-500 group-hover:text-[#8B1A1A] group-hover:translate-y-0.5"
               viewBox="0 0 16 16"
               fill="none"
               aria-hidden="true"
@@ -112,7 +117,7 @@ export function ProzessHero() {
             </svg>
           </span>
           <span className="text-left">
-            <span className="block font-body text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-hoser-gold">
+            <span className="block font-body text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#8B1A1A]">
               Prozess entdecken
             </span>
             <span className="mt-1 block font-body text-[0.65rem] uppercase tracking-[0.22em] text-white/40">
@@ -124,28 +129,20 @@ export function ProzessHero() {
 
       {/* Bottom-left: Scrollen indicator + desktop CTA, CTA vertically centered with the "Scrollen" text */}
       <div className="absolute bottom-12 left-[6%] z-10 hidden lg:block">
-        {/* Row 1: Scrollen vertical text + CTA, items-center keeps them vertically centered */}
         <div className="flex items-center gap-5">
-          <span
-            className="prozess-hero-scroll block font-body text-[0.6rem] uppercase tracking-[0.4em] text-white/60"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
-            Scrollen
-          </span>
-
           <button
             type="button"
             onClick={handleScrollToProzess}
             className="prozess-hero-cta group flex items-center gap-5 cursor-pointer focus:outline-none"
             aria-label="Zum Prozess scrollen"
           >
-            <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-white/15 transition-colors duration-500 group-hover:border-hoser-gold">
+            <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-white/15 transition-colors duration-500 group-hover:border-[#8B1A1A]">
               <span
-                className="absolute inset-0 rounded-full border border-hoser-gold opacity-0 scale-125 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
+                className="absolute inset-0 rounded-full border border-[#8B1A1A] opacity-0 scale-125 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
                 aria-hidden="true"
               />
               <svg
-                className="h-4 w-4 text-white/80 transition-all duration-500 group-hover:text-hoser-gold group-hover:translate-y-0.5"
+                className="h-4 w-4 text-white/80 transition-all duration-500 group-hover:text-[#8B1A1A] group-hover:translate-y-0.5"
                 viewBox="0 0 16 16"
                 fill="none"
                 aria-hidden="true"
@@ -160,7 +157,7 @@ export function ProzessHero() {
               </svg>
             </span>
             <span className="text-left">
-              <span className="block font-body text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#5AACCF]">
+              <span className="block font-body text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#8B1A1A]">
                 Prozess entdecken
               </span>
               <span className="mt-1 block font-body text-[0.65rem] uppercase tracking-[0.22em] text-white/70">
@@ -172,7 +169,7 @@ export function ProzessHero() {
 
         {/* Row 2: animated line+dot below the Scrollen text */}
         <span className="prozess-hero-scroll relative mt-4 ml-[3px] block h-16 w-px bg-white/35 overflow-hidden">
-          <span className="prozess-hero-dot absolute left-0 top-0 block w-px h-4 bg-hoser-gold" />
+          <span className="prozess-hero-dot absolute left-0 top-0 block w-px h-4 bg-[#8B1A1A]" />
         </span>
       </div>
     </section>

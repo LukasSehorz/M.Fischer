@@ -3,16 +3,18 @@
 import React, { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
-// BAUUNTERNEHMEN letter indices each HOSER letter "owns"
-// B A U U N T E R N E  H  M  E  N
-// 0 1 2 3 4 5 6 7 8 9 10 11 12 13
-const BAU = "BAUUNTERNEHMEN".split("");
+// MASCHINENBETRIEB letter indices each FISCHER letter "owns"
+// M  A  S  C  H  I  N  E  N  B  E  T  R  I  E  B
+// 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+const BAU = "MASCHINENBETRIEB".split("");
 const MAPPING = [
-  [0, 1],           // H → B A
-  [2, 3],           // O → U U
-  [4, 5, 6],        // S → N T E
-  [7, 8, 9],        // E → R N E
-  [10, 11, 12, 13], // R → H M E N
+  [0, 1],           // F → M A
+  [2, 3],           // I → S C
+  [4, 5, 6],        // S → H I N
+  [7, 8, 9],        // C → E N B
+  [10, 11, 12],     // H → E T R
+  [13, 14],         // E → I E
+  [15],             // R → B
 ];
 
 const BAU_META = BAU.map((_, idx) => {
@@ -122,8 +124,8 @@ export function HoserHero() {
           BAU.forEach((_, i) => {
             const meta = BAU_META[i];
             if (!meta) return;
-            const segStart = meta.g / 5;
-            const segEnd = (meta.g + 1) / 5;
+            const segStart = meta.g / 7;
+            const segEnd = (meta.g + 1) / 7;
             const litStart = segStart + (meta.p / meta.len) * (segEnd - segStart);
             const litEnd = segStart + ((meta.p + 1) / meta.len) * (segEnd - segStart);
             const lp = Math.max(0, Math.min(1,
@@ -221,21 +223,21 @@ export function HoserHero() {
                 padding: 0,
                 background: [
                   "linear-gradient(135deg,",
-                  "#3d7028 0%, #234e12 13%,",
-                  "#5a9440 27%, #1c3e0c 40%,",
-                  "#4a8030 54%, #6aaa48 67%,",
-                  "#2a5518 80%, #4e8a34 92%,",
-                  "#3a7024 100%)",
+                  "#8B1A1A 0%, #5C0F0F 13%,",
+                  "#A52020 27%, #6B1515 40%,",
+                  "#8B1A1A 54%, #C94040 67%,",
+                  "#7A1212 80%, #A52020 92%,",
+                  "#8B1A1A 100%)",
                 ].join(" "),
                 backgroundSize: "280% 280%",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                color: "#4a7c30",
+                color: "#8B1A1A",
                 animation: "hoserAlgaeFlow 14s ease infinite",
                 userSelect: "none",
               }}>
-                HOSER
+                FISCHER
               </h1>
             </div>
 

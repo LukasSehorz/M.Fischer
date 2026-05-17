@@ -4,13 +4,13 @@ import React from "react";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 
 const inputCls = [
-  "w-full border border-[rgba(14,42,107,0.20)] bg-white px-4 py-3",
-  "font-body text-sm text-[#0A1628] placeholder:text-[#0A1628]/40",
+  "w-full border border-[rgba(139,26,26,0.20)] bg-white px-4 py-3",
+  "font-body text-sm text-[#28282B] placeholder:text-[#28282B]/40",
   "outline-none transition-colors duration-200",
-  "focus:border-[#0E2A6B] focus:ring-0",
+  "focus:border-[#8B1A1A] focus:ring-0",
 ].join(" ");
 
-const labelCls = "block mb-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-[#0A1628]/60";
+const labelCls = "block mb-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-[#28282B]/60";
 
 export function Contact6() {
   return (
@@ -20,30 +20,31 @@ export function Contact6() {
         {/* Left: info */}
         <div>
           <div className="mb-8">
-            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
+            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
               Anfragen
             </p>
-            <h2 className="mb-5 font-heading text-5xl font-bold text-[#0A1628] md:text-6xl lg:text-7xl">
+            <h2 className="mb-5 font-heading text-5xl font-bold text-[#28282B] md:text-6xl lg:text-7xl">
               Ihr Projekt
             </h2>
-            <p className="font-body text-base text-[#0A1628]/60">
-              Wir antworten innerhalb eines Arbeitstages
+            <p className="font-body text-base text-[#28282B]/60">
+              Ich antworte innerhalb eines Arbeitstages
             </p>
           </div>
           <div className="grid gap-4">
             <div className="flex items-center gap-4">
-              <BiEnvelope className="size-5 flex-none text-[#0E2A6B]" />
-              <p className="font-body text-sm text-[#0A1628]">schmid-bau@gmx.net</p>
+              <BiEnvelope className="size-5 flex-none text-[#8B1A1A]" />
+              <p className="font-body text-sm text-[#28282B]">m.fischer-mab@web.de</p>
             </div>
             <div className="flex items-center gap-4">
-              <BiPhone className="size-5 flex-none text-[#0E2A6B]" />
-              <p className="font-body text-sm text-[#0A1628]">08762 / 426420</p>
+              <BiPhone className="size-5 flex-none text-[#8B1A1A]" />
+              <p className="font-body text-sm text-[#28282B]">0175 / 4322110</p>
             </div>
             <div className="flex items-center gap-4">
-              <BiMap className="size-5 flex-none text-[#0E2A6B]" />
-              <p className="font-body text-sm text-[#0A1628]">Kreuzstraße 19, 85459 Berglern</p>
+              <BiMap className="size-5 flex-none text-[#8B1A1A]" />
+              <p className="font-body text-sm text-[#28282B]">Ritzmehring 1, 83543 Rott am Inn</p>
             </div>
           </div>
+
         </div>
 
         {/* Right: form */}
@@ -78,26 +79,27 @@ export function Contact6() {
               defaultValue=""
             >
               <option value="" disabled>Bitte wählen</option>
-              <option value="neubau">Neubau</option>
-              <option value="sanierung">Sanierung</option>
-              <option value="erweiterung">Erweiterung</option>
-              <option value="beratung">Beratung</option>
+              <option value="tiefbau">Tiefbau</option>
+              <option value="erdarbeiten">Erdarbeiten</option>
+              <option value="abbruch">Abbruch & Rückbau</option>
+              <option value="aussenanlagen">Außenanlagen & Pflasterung</option>
+              <option value="baumfaellung">Baumfällung & Rodung</option>
               <option value="sonstiges">Sonstiges</option>
             </select>
           </div>
 
           <div>
-            <p className={labelCls + " mb-3"}>Wie beschreiben Sie sich?</p>
+            <p className={labelCls + " mb-3"}>Wie dringend ist Ihr Vorhaben?</p>
             <div className="grid grid-cols-2 gap-x-6 gap-y-3">
-              {["Neubau","Sanierung","Erweiterung","Modernisierung","Beratung","Sonstiges"].map((opt) => (
+              {["So schnell wie möglich","Innerhalb eines Monats","In den nächsten 3 Monaten","Noch nicht festgelegt"].map((opt) => (
                 <label key={opt} className="flex items-center gap-2.5 cursor-pointer group">
                   <input
                     type="radio"
-                    name="beschreibung"
+                    name="dringlichkeit"
                     value={opt}
-                    className="appearance-none size-4 rounded-full border-2 border-[rgba(14,42,107,0.30)] checked:border-[#0E2A6B] checked:bg-[#0E2A6B] transition-colors duration-200 cursor-pointer flex-none"
+                    className="appearance-none size-4 rounded-full border-2 border-[rgba(139,26,26,0.30)] checked:border-[#8B1A1A] checked:bg-[#8B1A1A] transition-colors duration-200 cursor-pointer flex-none"
                   />
-                  <span className="font-body text-sm text-[#0A1628]/70 group-hover:text-[#0A1628] transition-colors">{opt}</span>
+                  <span className="font-body text-sm text-[#28282B]/70 group-hover:text-[#28282B] transition-colors">{opt}</span>
                 </label>
               ))}
             </div>
@@ -108,7 +110,7 @@ export function Contact6() {
             <textarea
               id="message"
               rows={6}
-              placeholder="Erzählen Sie uns von Ihrem Projekt"
+              placeholder="Erzählen Sie mir von Ihrem Projekt"
               className={inputCls + " resize-none"}
             />
           </div>
@@ -117,9 +119,9 @@ export function Contact6() {
             <input
               type="checkbox"
               id="terms"
-              className="mt-0.5 size-4 appearance-none border-2 border-[rgba(14,42,107,0.30)] checked:border-[#0E2A6B] checked:bg-[#0E2A6B] transition-colors duration-200 cursor-pointer flex-none"
+              className="mt-0.5 size-4 appearance-none border-2 border-[rgba(139,26,26,0.30)] checked:border-[#8B1A1A] checked:bg-[#8B1A1A] transition-colors duration-200 cursor-pointer flex-none"
             />
-            <label htmlFor="terms" className="font-body text-sm text-[#0A1628]/60 cursor-pointer leading-snug">
+            <label htmlFor="terms" className="font-body text-sm text-[#28282B]/60 cursor-pointer leading-snug">
               Ich akzeptiere die Datenschutzerklärung
             </label>
           </div>
@@ -127,7 +129,7 @@ export function Contact6() {
           <div>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 border border-[#0E2A6B] bg-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#0E2A6B]"
+              className="inline-flex items-center gap-2 border border-[#8B1A1A] bg-[#8B1A1A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#8B1A1A]"
             >
               Senden
               <span>→</span>

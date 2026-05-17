@@ -61,8 +61,8 @@ export function HeroLeistungen() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Image: slow Ken-Burns + initial reveal
-      gsap.set(imageRef.current, { scale: 1.18, filter: "brightness(0.7)" });
-      gsap.set(overlayRef.current, { opacity: 1 });
+      gsap.set(imageRef.current, { scale: 1.18, filter: "brightness(0.85)" });
+      gsap.set(overlayRef.current, { opacity: 1, pointerEvents: "none" });
 
       // Side mark
       gsap.set(sideMarkRef.current, { y: 30, opacity: 0 });
@@ -70,11 +70,11 @@ export function HeroLeistungen() {
       // Eyebrow
       gsap.set(eyebrowRef.current, { x: -30, opacity: 0 });
 
-      // Heading words
-      const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Leistungen mit System.")
+      // Heading lines
+      const headingLines = headingRef.current
+        ? Array.from(headingRef.current.querySelectorAll(".hl-inner"))
         : [];
-      gsap.set(headingWords, { yPercent: 110 });
+      gsap.set(headingLines, { yPercent: 110 });
 
       // Sub paragraph
       gsap.set(subRef.current, { y: 24, opacity: 0 });
@@ -95,18 +95,17 @@ export function HeroLeistungen() {
           ease: "power2.out",
         })
         .to(overlayRef.current, {
-          opacity: 0.55,
-          duration: 1.2,
-          ease: "power2.out",
-        }, "-=1.2")
+          opacity: 1,
+          duration: 0.01,
+        }, 0)
         .to(sideMarkRef.current, {
           y: 0, opacity: 1, duration: 0.8, ease: "power3.out",
         }, "-=1.0")
         .to(eyebrowRef.current, {
           x: 0, opacity: 1, duration: 0.7, ease: "power3.out",
         }, "-=0.8")
-        .to(headingWords, {
-          yPercent: 0, duration: 1.0, ease: "expo.out", stagger: 0.08,
+        .to(headingLines, {
+          yPercent: 0, duration: 1.0, ease: "expo.out", stagger: 0.12,
         }, "-=0.5")
         .to(subRef.current, {
           y: 0, opacity: 1, duration: 0.7, ease: "power3.out",
@@ -151,14 +150,14 @@ export function HeroLeistungen() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#0E2A6B] text-white"
+      className="relative w-full overflow-hidden bg-[#121212] text-white"
       style={{ height: "100vh", minHeight: "720px" }}
     >
       {/* Background image */}
       <img
         ref={imageRef}
-        src="/images/leistungen-hero.jpg"
-        alt="Schmid-Bau GmbH – Leistungen"
+        src="/images/bild9.png"
+        alt="M. Fischer Maschinenbetrieb – Leistungen"
         className="absolute inset-0 h-full w-full object-cover"
         style={{ willChange: "transform, filter" }}
       />
@@ -169,25 +168,10 @@ export function HeroLeistungen() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(14,42,107,0.65) 0%, rgba(14,42,107,0.4) 35%, rgba(7,25,74,0.92) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.07) 0%, transparent 55%)",
+            "linear-gradient(to right, rgba(18,18,18,0.93) 0%, rgba(18,18,18,0.80) 38%, rgba(18,18,18,0.45) 65%, rgba(18,18,18,0.12) 100%)",
         }}
       />
 
-      {/* Decorative grid lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
-           style={{
-             backgroundImage:
-               "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-             backgroundSize: "120px 120px",
-           }}
-      />
 
       {/* Vertical side mark removed — collided with the oversized heading. */}
 
@@ -205,7 +189,7 @@ export function HeroLeistungen() {
             className="mb-6 font-body text-sm font-semibold uppercase tracking-[0.4em] text-white/85 flex items-center gap-4"
           >
             <span className="h-px w-12 bg-white/65" />
-            Leistungen
+            M. Fischer Bauunternehmen
           </p>
 
           <h1
@@ -213,7 +197,12 @@ export function HeroLeistungen() {
             className="font-heading font-bold leading-[0.95] tracking-tight text-white"
             style={{ fontSize: "clamp(3rem, 9vw, 9rem)" }}
           >
-            Leistungen mit System.
+            <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
+              <span className="hl-inner block">Meine</span>
+            </span>
+            <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
+              <span className="hl-inner block" style={{ color: "#8B1A1A" }}>Leistungen</span>
+            </span>
           </h1>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-x-12 items-end">
@@ -221,9 +210,9 @@ export function HeroLeistungen() {
               ref={subRef}
               className="md:col-span-6 lg:col-span-5 font-body text-base md:text-lg leading-relaxed text-white/75 max-w-xl"
             >
-              Ein Ansprechpartner. Vom ersten Spatenstich bis zur
-              schlüsselfertigen Übergabe – wir verbinden traditionelles Handwerk
-              mit modernster Bautechnik.
+              Ein Ansprechpartner. Vom ersten Gespräch bis zur fertigen
+              Übergabe – ich führe alle Arbeiten persönlich aus, ohne
+              Subunternehmer und ohne Kompromisse bei der Qualität.
             </p>
 
             <div
@@ -235,7 +224,7 @@ export function HeroLeistungen() {
                   Standort
                 </span>
                 <span className="font-heading text-lg font-semibold text-white">
-                  Berglern · Erding
+                  Rott am Inn
                 </span>
               </div>
             </div>
@@ -244,7 +233,7 @@ export function HeroLeistungen() {
               <a
                 ref={ctaRef}
                 href="#leistungen"
-                className="group inline-flex items-center gap-3 border border-white/45 hover:bg-[#0E2A6B] hover:border-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.15em] text-white transition-all duration-300"
+                className="group inline-flex items-center gap-3 border border-white/45 hover:bg-[#8B1A1A] hover:border-[#8B1A1A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.15em] text-white transition-all duration-300"
               >
                 <span>Gewerke entdecken</span>
                 <span className="text-base transition-transform duration-300 group-hover:translate-x-1">

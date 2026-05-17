@@ -23,57 +23,39 @@ const splitWords = (el, text) => {
 
 const jobs = [
   {
-    title: "Maurer (m/w/d)",
-    type: "Vollzeit",
-    location: "Berglern · Region Erding",
-    desc: "Erstellung von Wänden, Mauern und Decken im Hochbau. Mitwirken bei Wohn- und Geschäftshäusern, Hallen, Ställen, Kellern und Bodenplatten.",
+    title: "Baggerfahrer / Tiefbauer (m/w/d)",
+    type: "Minijob / Teilzeit",
+    location: "Rott am Inn · Inntal und Chiemgau",
+    desc: "Unterstützung bei Tiefbau-, Erdarbeiten- und Abbruchprojekten. Du packst gerne mit an und arbeitest gerne mit modernem Gerät.",
     anforderungen: [
-      "Abgeschlossene Ausbildung als Maurer",
-      "Erfahrung in Schalungsarbeiten, Betonieren und Verputzen",
-      "Teamfähigkeit und Zuverlässigkeit",
-      "Führerschein Klasse B von Vorteil",
+      "Erfahrung im Umgang mit Baggern und Baumaschinen von Vorteil",
+      "Körperliche Belastbarkeit und Zuverlässigkeit",
+      "Führerschein Klasse B erforderlich",
+      "Eigeninitiative und selbstständiges Arbeiten",
     ],
     bieten: [
-      "Überdurchschnittliche Bezahlung",
-      "Arbeitskleidung & Sozialleistungen",
-      "Junges, motiviertes Team mit Spaß an der Arbeit",
-      "Volle Auftragsbücher – keine Angst vor Kurzarbeit",
-    ],
-  },
-  {
-    title: "Kranfahrer (m/w/d)",
-    type: "Vollzeit",
-    location: "Berglern · Region Erding",
-    desc: "Sichere und präzise Steuerung unserer Krane sowie Unterstützung des Teams bei Hebe- und Transportarbeiten auf unseren Baustellen.",
-    anforderungen: [
-      "Kranführerschein (und idealerweise Erfahrung am Haken)",
-      "Verantwortungsbewusstsein und Teamgeist",
-      "Lust, mit moderner Technik zu arbeiten",
-      "Zuverlässigkeit und Sorgfalt",
-    ],
-    bieten: [
-      "Sicherer Arbeitsplatz in einem starken Team",
       "Faire Bezahlung",
-      "Moderne Maschinen & Ausstattung",
+      "Moderner Maschinenpark",
       "Abwechslungsreiche Projekte in der Region",
+      "Direkte Zusammenarbeit mit dem Inhaber",
     ],
   },
   {
-    title: "Bauhelfer (m/w/d)",
-    type: "Vollzeit",
-    location: "Berglern · Region Erding",
-    desc: "Unterstützen bei verschiedenen Bauarbeiten und Auf-/Abbauarbeiten. Du packst gern mit an und willst Teil eines starken Teams sein.",
+    title: "Helfer Außenanlagen & Garten (m/w/d)",
+    type: "Minijob / Saisonal",
+    location: "Rott am Inn · Inntal und Chiemgau",
+    desc: "Unterstützung bei der Gestaltung von Außenanlagen, Baumfällungen und Gartenarbeiten. Ideal für Menschen mit handwerklichem Geschick.",
     anforderungen: [
-      "Handwerkliches Geschick & Lust auf körperliche Arbeit",
-      "Zuverlässigkeit und Teamgeist",
-      "Erfahrung auf dem Bau? Super – aber kein Muss",
-      "Führerschein Klasse B wäre von Vorteil",
+      "Interesse an Garten- und Landschaftsarbeiten",
+      "Körperliche Fitness und Zuverlässigkeit",
+      "Erfahrung mit Motorsäge oder Gartengeräten von Vorteil",
+      "Führerschein Klasse B wäre ideal",
     ],
     bieten: [
-      "Sicherer Job in einem motivierten Team",
       "Faire Bezahlung",
-      "Abwechslungsreiche Aufgaben auf spannenden Projekten",
-      "Direkte Zusammenarbeit mit erfahrenen Kollegen",
+      "Abwechslungsreiche Aufgaben im Freien",
+      "Flexible Einsatzzeiten nach Absprache",
+      "Direkter Kontakt – kurze Wege",
     ],
   },
 ];
@@ -146,7 +128,7 @@ export function Karriere() {
       ref={sectionRef}
       id="stellenangebote"
       className="overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0E2A6B 0%, #07194A 100%)" }}
+      style={{ background: "linear-gradient(180deg, #8B1A1A 0%, #5C0F0F 100%)" }}
     >
       {/* Heading with image background */}
       <div
@@ -160,7 +142,7 @@ export function Karriere() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(14,42,107,0.55) 0%, rgba(14,42,107,0.30) 40%, rgba(14,42,107,0.78) 75%, rgba(7,25,74,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(139,26,26,0.55) 0%, rgba(139,26,26,0.30) 40%, rgba(139,26,26,0.78) 75%, rgba(92,15,15,1) 100%)",
           }}
         />
         <div className="container relative z-10">
@@ -289,7 +271,7 @@ export function Karriere() {
                         </div>
                       </div>
                       <a
-                        href="mailto:schmid-bau@gmx.net"
+                        href="mailto:m.fischer-mab@web.de"
                         onClick={(e) => e.stopPropagation()}
                         className="inline-flex items-center gap-2 bg-white px-5 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.12em] text-hoser-gold transition-opacity hover:opacity-90"
                       >
@@ -314,25 +296,25 @@ export function Karriere() {
                 Kein passendes Angebot?
               </h3>
               <p className="mt-3 font-body text-sm text-white/50 leading-relaxed">
-                Wir freuen uns jederzeit über Initiativbewerbungen qualifizierter Handwerker.
-                Schriftlich an:<br />
-                <span className="text-white/70">Schmid-Bau GmbH · Kreuzstraße 19 · 85459 Berglern</span>
+                Ich freue mich jederzeit über Kontaktaufnahme von Handwerkern und Helfern.
+                Meld dich gerne direkt:<br />
+                <span className="text-white/70">M. Fischer Maschinenbetrieb · Ritzmehring 1 · 83543 Rott am Inn</span>
               </p>
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:schmid-bau@gmx.net"
+                href="mailto:m.fischer-mab@web.de"
                 className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-white hover:bg-white/5"
               >
                 <span className="text-white text-base">✉</span>
-                schmid-bau@gmx.net
+                m.fischer-mab@web.de
               </a>
               <a
-                href="tel:+491707795316"
+                href="tel:+491754322110"
                 className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-white hover:bg-white/5"
               >
                 <span className="text-white text-base">☎</span>
-                0170 / 779 5316
+                0175 / 4322110
               </a>
             </div>
           </div>

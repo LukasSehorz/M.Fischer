@@ -3,12 +3,12 @@
 import React from "react";
 
 const badges = [
-  "Meisterbetrieb",
+  "Einmannbetrieb",
   "Festpreisgarantie",
-  "20+ Jahre Bayern",
-  "847 Projekte",
-  "TÜV-zertifiziert",
-  "ISO 9001",
+  "Rott am Inn",
+  "Tiefbau",
+  "Abbruch",
+  "Außenanlagen",
 ];
 
 export function Cta33() {
@@ -21,10 +21,10 @@ export function Cta33() {
               Jetzt starten
             </p>
             <h2 className="mb-5 font-heading text-5xl font-bold leading-tight tracking-tight text-text-primary md:text-7xl lg:text-8xl">
-              Bereit, Ihr Haus in Bayern zu bauen?
+              Bereit für Ihr Projekt in der Region?
             </h2>
             <p className="mb-8 font-body text-base text-text-secondary md:text-lg">
-              Festpreis. Pünktliche Lieferung. Keine Überraschungen.
+              Persönlich. Flexibel. Zuverlässig.
               Fordern Sie noch heute Ihre kostenlose Beratung an.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">

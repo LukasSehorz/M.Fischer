@@ -10,7 +10,7 @@
   body {
     font-family: "DM Sans", sans-serif;
     background-color: #FDFCF8;
-    color: #0A1628;
+    color: #28282B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -22,8 +22,8 @@
 
   /* Native selection in brand color */
   ::selection {
-    background-color: rgba(14, 42, 107, 0.18);
-    color: #0A1628;
+    background-color: rgba(139, 26, 26, 0.18);
+    color: #28282B;
   }
 }
 

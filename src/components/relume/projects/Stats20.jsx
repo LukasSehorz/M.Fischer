@@ -5,9 +5,9 @@ import { gsap } from "../../../utils/gsap";
 
 const stats = [
   { value: 57,  suffix: "",  label: "Abgeschlossene\nProjekte" },
+  { value: 100, suffix: "%", label: "Eigenleistung –\nkein Subunternehmer" },
+  { value: 5,   suffix: "+", label: "Jahre\nin der Region" },
   { value: 98,  suffix: "%", label: "Pünktliche\nFertigstellung" },
-  { value: 96,  suffix: "%", label: "Im\nBudgetrahmen" },
-  { value: 30,  suffix: "+", label: "Jahre\nin der Region" },
 ];
 
 const splitWords = (el, text) => {
@@ -114,7 +114,7 @@ export function Stats20() {
 
       {/* Heading */}
       <div className="container px-[5%] mb-16">
-        <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+        <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
           Zahlen & Fakten
         </p>
         <h2
@@ -125,7 +125,7 @@ export function Stats20() {
           Ergebnisse, die für sich sprechen
         </h2>
         <p ref={subRef} className="mt-4 max-w-xl font-body text-base text-white/60">
-          Seit 1992 in der Region Erding. Projekte für Generationen. Ein Name.
+          Seit 2020 in Rott am Inn – jede Zahl steht für ein abgeschlossenes Projekt und einen zufriedenen Kunden.
         </p>
       </div>
 
@@ -142,12 +142,12 @@ export function Stats20() {
             >
               <p
                 data-stat-value
-                className="font-heading font-bold leading-none text-white transition-colors duration-300 group-hover:text-[#5AACCF]"
+                className="font-heading font-bold leading-none text-white transition-colors duration-300 group-hover:text-[#8B1A1A]"
                 style={{ fontSize: "clamp(3.5rem, 7vw, 6rem)" }}
               >
                 0{s.suffix}
               </p>
-              <div data-stat-line className="mt-4 h-px w-8 bg-[#5AACCF]/50 transition-all duration-300 group-hover:w-16 group-hover:bg-[#5AACCF]" />
+              <div data-stat-line className="mt-4 h-px w-8 bg-[#8B1A1A]/50 transition-all duration-300 group-hover:w-16 group-hover:bg-[#8B1A1A]" />
               <p data-stat-label className="mt-3 whitespace-pre-line font-body text-sm leading-relaxed text-white/50">
                 {s.label}
               </p>
@@ -161,9 +161,9 @@ export function Stats20() {
         <a
           ref={ctaRef}
           href="#projekte"
-          className="inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.15em] text-white/50 transition-colors duration-300 hover:text-[#5AACCF]"
+          className="inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.15em] text-white/50 transition-colors duration-300 hover:text-[#8B1A1A]"
         >
-          Projekte entdecken <span className="text-[#5AACCF]">→</span>
+          Projekte entdecken <span className="text-[#8B1A1A]">→</span>
         </a>
       </div>
 

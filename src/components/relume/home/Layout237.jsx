@@ -5,19 +5,19 @@ import { gsap } from "../../../utils/gsap";
 
 const features = [
   {
-    title: "Handwerk als Berufung",
-    body: "Gegründet 1992 als Familienbetrieb. Seit 2007 führt Michael Schmid das väterliche Unternehmen und setzt auf bewährte Werte: Qualität, Verlässlichkeit und persönliche Betreuung auf jedem Bauprojekt.",
-    image: "/images/craftsmen-stone-facade.jpg",
+    title: "Direkt & Unkompliziert",
+    body: "Bei mir gibt es keine langen Entscheidungswege. Ich bin selbst auf der Baustelle – vom ersten Gespräch bis zum letzten Spatenstich.",
+    image: "/images/bild2.png",
   },
   {
-    title: "Persönlichkeit & Beständigkeit",
-    body: "Klare Angebote, direkte Kommunikation, ein Ansprechpartner. Mit unserem zehnköpfigen Team betreuen wir jedes Projekt von der Planung bis zur Schlüsselübergabe – zuverlässig und termintreu.",
-    image: "/images/team-blueprints.jpg",
+    title: "Qualität ohne Kompromisse",
+    body: "Jede Baustelle führe ich mit dem gleichen Anspruch aus: sauber, termingerecht und zum vereinbarten Preis. Keine Überraschungen, keine Nachforderungen.",
+    image: "/images/bild3.png",
   },
   {
-    title: "Verwurzelt in der Region",
-    body: "Berglern ist unsere Heimat. Seit 1992 bauen wir in der Region Erding und weit darüber hinaus. Seit 2015 finden Sie uns in einer ehemaligen Schnapsbrennerei – ein Ort mit Charakter, wie unsere Arbeit.",
-    image: "/images/munich-residential.jpg",
+    title: "Verwurzelt im Inntal und Chiemgau",
+    body: "Seit 2020 führe ich Projekte im Inntal und Chiemgau aus. Kurze Wege, lokale Kenntnisse – ich kenne die Region.",
+    image: "/images/bild4.png",
   },
 ];
 
@@ -129,20 +129,20 @@ export function Layout237() {
 
         {/* Heading */}
         <div className="l237-heading-area mb-14 max-w-2xl md:mb-18">
-          <p className="l237-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
-            Unsere Philosophie
+          <p className="l237-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
+            Meine Philosophie
           </p>
           <h2
-            className="font-heading font-bold leading-[1.05] tracking-tight text-[#0A1628]"
+            className="font-heading font-bold leading-[1.05] tracking-tight text-[#28282B]"
             style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.5rem)" }}
           >
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
-              <span className="l237-heading-inner block">Wie wir denken.</span>
+              <span className="l237-heading-inner block">Wie ich denke.</span>
             </span>
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
               <span className="l237-heading-inner block">
                 <em className="font-serif font-light not-italic text-[#5A6478]">
-                  Wie wir bauen.
+                  Wie ich arbeite.
                 </em>
               </span>
             </span>
@@ -191,7 +191,7 @@ export function Layout237() {
                 <div
                   className={`l237-card-content absolute bottom-0 ${isEven ? "left-0" : "right-0"} p-8 md:p-12 max-w-xl`}
                 >
-                  <div className="l237-card-line mb-4 h-px w-8 bg-[#0E2A6B]" />
+                  <div className="l237-card-line mb-4 h-px w-8 bg-[#8B1A1A]" />
                   <h3
                     className="mb-3 font-heading font-bold leading-tight tracking-tight text-white"
                     style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.4rem)" }}
@@ -211,16 +211,16 @@ export function Layout237() {
         <div className="l237-cta-row mt-12 flex flex-wrap items-center gap-6 md:mt-16">
           <a
             href="/leistungen"
-            className="l237-cta inline-flex items-center bg-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
+            className="l237-cta inline-flex items-center bg-[#8B1A1A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
           >
             Leistungen entdecken
           </a>
           <a
             href="/ueber-uns"
-            className="l237-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#0A1628]"
+            className="l237-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B]"
           >
-            Unsere Geschichte
-            <span className="text-[#0E2A6B]">→</span>
+            Meine Geschichte
+            <span className="text-[#8B1A1A]">→</span>
           </a>
         </div>
 

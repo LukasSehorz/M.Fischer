@@ -5,28 +5,28 @@ import { gsap } from "../../../utils/gsap";
 
 const photos = [
   {
-    src: "/images/hero-aerial-construction.jpg",
-    caption: "Luftaufnahme einer aktiven Baustelle – präzise Koordination aller Gewerke von Beginn an.",
+    src: "/images/bild15.jpeg",
+    caption: "Ich persönlich im Einsatz – Erdarbeiten mit dem Minibagger direkt am Wohnhaus.",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/images/Beispiel-Projekte/Geruestbau-300x225.webp",
-    caption: "Gerüstbau für sichere und effiziente Arbeiten auf jeder Baustelle.",
+    src: "/images/bild16.jpeg",
+    caption: "Schalungsarbeiten und Stützmauer – solide Ausführung auf jedem Gelände.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/Beispiel-Projekte/Referenz5-300x170.webp",
-    caption: "Referenzprojekte aus dem Raum Erding und München – realisiert mit eigenem Fachpersonal.",
+    src: "/images/bild17.jpeg",
+    caption: "Außenanlagen neu gestaltet – Innenhof und Zugänge gepflastert nach Kundenwunsch.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/Beispiel-Projekte/Rohbau-300x225.webp",
-    caption: "Solider Rohbau als Basis für alle Folgegewerke – präzise und termingerecht.",
+    src: "/images/bild18.jpeg",
+    caption: "Geländearbeiten im Grünen – Grundstück vorbereitet und planiert.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/bild13.jpg",
-    caption: "Fertigstellung und Übergabe – pünktlich, im Budgetrahmen, mit Festpreisgarantie.",
+    src: "/images/bild19.jpeg",
+    caption: "Rodung und Baumfällung – Grundstück bereit für die weitere Bebauung.",
     span: "col-span-1 row-span-1",
   },
 ];
@@ -129,7 +129,7 @@ export function Gallery22() {
 
         {/* Heading */}
         <div className="mb-12 md:mb-16">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
             Einblicke
           </p>
           <h2
@@ -184,7 +184,7 @@ export function Gallery22() {
                     transform: hovered === i ? "translateY(0)" : "translateY(12px)",
                   }}
                 >
-                  <div className="mb-3 h-[2px] w-8 bg-[#5AACCF]" />
+                  <div className="mb-3 h-[2px] w-8 bg-[#8B1A1A]" />
                   <p className="font-body text-sm leading-relaxed text-white/90 md:text-base">
                     {p.caption}
                   </p>

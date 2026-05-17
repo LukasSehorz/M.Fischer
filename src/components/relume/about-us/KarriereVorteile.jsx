@@ -25,32 +25,32 @@ const vorteile = [
   {
     num: "01",
     title: "Fairer Lohn",
-    desc: "Übertarifliche Bezahlung und pünktliche Gehaltszahlungen – verlässlich, transparent und leistungsgerecht.",
+    desc: "Faire Bezahlung und pünktliche Abrechnung – verlässlich, transparent und leistungsgerecht.",
   },
   {
     num: "02",
     title: "Modernster Maschinenpark",
-    desc: "Neueste Maschinen und Geräte für effizientes und sicheres Arbeiten. Wir investieren kontinuierlich in Technik.",
+    desc: "Neueste Maschinen und Geräte für effizientes und sicheres Arbeiten auf jeder Baustelle.",
   },
   {
     num: "03",
-    title: "Eigene Ausbildung",
-    desc: "Wir bilden selbst aus und fördern gezielt – vom Lehrling über den Facharbeiter bis zum Polier und Meister.",
+    title: "Abwechslungsreiche Projekte",
+    desc: "Tiefbau, Abbruch, Erdarbeiten, Außenanlagen – kein Tag ist wie der andere.",
   },
   {
     num: "04",
-    title: "Familiäres Team",
-    desc: "Seit 1992 Familienunternehmen. Flache Hierarchien, direkte Kommunikation, Respekt und Zusammenhalt.",
+    title: "Direkter Kontakt",
+    desc: "Seit 2020 Einmannbetrieb. Flache Hierarchien, direkte Kommunikation und schnelle Entscheidungen.",
   },
   {
     num: "05",
-    title: "Sicherer Arbeitsplatz",
-    desc: "Konstante Auftragslage durch starkes regionales Netzwerk – über 500 abgeschlossene Projekte seit 1952.",
+    title: "Sicherer Auftrag",
+    desc: "Konstante Auftragslage durch ein starkes regionales Netzwerk und top Kundenbewertungen.",
   },
   {
     num: "06",
-    title: "Weiterbildung & Entwicklung",
-    desc: "Interne und externe Schulungen für alle Mitarbeiter. Wir investieren in deine fachliche Weiterentwicklung.",
+    title: "Flexible Arbeitszeiten",
+    desc: "Als kleines Unternehmen reagieren wir flexibel auf die Bedürfnisse unserer Mitarbeiter.",
   },
 ];
 
@@ -139,7 +139,7 @@ export function KarriereVorteile() {
       ref={sectionRef}
       id="jobs"
       className="overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0E2A6B 0%, #0A2059 60%, #07194A 100%)" }}
+      style={{ background: "linear-gradient(135deg, #8B1A1A 0%, #6B1515 60%, #5C0F0F 100%)" }}
     >
       {/* Top: image background behind heading */}
       <div
@@ -154,7 +154,7 @@ export function KarriereVorteile() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(14,42,107,0.62) 0%, rgba(14,42,107,0.40) 40%, rgba(7,25,74,0.78) 75%, rgba(7,25,74,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(139,26,26,0.62) 0%, rgba(139,26,26,0.40) 40%, rgba(92,15,15,0.78) 75%, rgba(92,15,15,1) 100%)",
           }}
         />
 
@@ -165,14 +165,14 @@ export function KarriereVorteile() {
           style={{ fontSize: "clamp(6rem, 18vw, 20rem)" }}
           aria-hidden="true"
         >
-          SCHMID
+          FISCHER
         </div>
 
         <div className="container relative z-10">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
             <div>
               <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.28em] text-white/85">
-                Karriere bei Schmid-Bau
+                Karriere bei M. Fischer
               </p>
               <h2
                 ref={headingRef}
@@ -184,8 +184,8 @@ export function KarriereVorteile() {
             </div>
             <div className="md:text-right">
               <p ref={subRef} className="font-body text-base leading-relaxed text-white/75 max-w-md md:ml-auto">
-                Als gewachsenes Familienunternehmen bieten wir mehr als nur einen Job –
-                einen Arbeitsplatz, der sich lohnt. Langfristig, sicher und fair.
+                Ein kleiner Betrieb mit großem Einsatz. Wer gerne anpackt und
+                auf einer Baustelle mit modernem Gerät arbeitet, ist willkommen.
               </p>
               <a
                 ref={ctaRef}
@@ -207,7 +207,7 @@ export function KarriereVorteile() {
               <div
                 key={v.num}
                 ref={(el) => (cellsRef.current[idx] = el)}
-                className="group relative bg-[#0A2059] p-8 md:p-10 transition-colors duration-300 hover:bg-[#0C2666]"
+                className="group relative bg-[#6B1515] p-8 md:p-10 transition-colors duration-300 hover:bg-[#7A1818]"
               >
                 <span data-vt-num className="mb-6 block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">
                   {v.num}

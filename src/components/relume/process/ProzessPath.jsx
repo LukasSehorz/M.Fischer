@@ -7,62 +7,62 @@ import { MessageSquare, Ruler, ClipboardCheck, Building2, KeyRound } from "lucid
 const STEPS = [
   {
     num: "01",
-    title: "Erstgespräch",
+    title: "Kontaktaufnahme",
     Icon: MessageSquare,
     above: false,
     img: "/images/prozess/step1.png",
     bullets: [
-      "Kostenlose Erstberatung vor Ort",
-      "Projektziele & Budget definieren",
-      "Erste Machbarkeitseinschätzung",
+      "Anruf oder Nachricht – ich melde mich schnell",
+      "Kurze Schilderung Ihres Vorhabens",
+      "Terminvereinbarung für die Besichtigung",
     ],
   },
   {
     num: "02",
-    title: "Planung & Angebot",
+    title: "Vor-Ort-Termin",
     Icon: Ruler,
     above: true,
     img: "/images/prozess/step2.png",
     bullets: [
-      "Detaillierte Bauplanung & Grundriss",
-      "Verbindliches Festpreisangebot",
-      "Vertragsabschluss",
+      "Persönliche Besichtigung des Geländes",
+      "Klärung aller Anforderungen und Wünsche",
+      "Verbindliches Angebot innerhalb weniger Tage",
     ],
   },
   {
     num: "03",
-    title: "Baugenehmigung",
+    title: "Auftragserteilung",
     Icon: ClipboardCheck,
     above: false,
     img: "/images/prozess/step3.png",
     bullets: [
-      "Einholung aller Genehmigungen",
-      "Baustelle einrichten",
-      "Materialbestellung & Terminplanung",
+      "Auftragsbestätigung und Terminvereinbarung",
+      "Materialbestellung und Vorbereitung",
+      "Klare Absprache – keine Überraschungen",
     ],
   },
   {
     num: "04",
-    title: "Bauausführung",
+    title: "Persönliche Ausführung",
     Icon: Building2,
     above: true,
     img: "/images/prozess/step4.png",
     bullets: [
-      "Rohbau durch eigenes Fachpersonal",
-      "Laufende Qualitätskontrolle",
-      "Wöchentliche Statusberichte",
+      "Ich führe jeden Auftrag selbst aus",
+      "Direkte Kommunikation während der Arbeit",
+      "Sorgfältige und termingerechte Ausführung",
     ],
   },
   {
     num: "05",
-    title: "Schlüsselübergabe",
+    title: "Abnahme & Fertigstellung",
     Icon: KeyRound,
     above: false,
     img: "/images/prozess/step5.png",
     bullets: [
-      "Abnahme & Mängelprotokoll",
-      "Vollständige Dokumentation",
-      "Übergabe & persönliche Einweisung",
+      "Gemeinsame Abnahme vor Ort",
+      "Baustelle besenrein hinterlassen",
+      "Rechnung erst nach Ihrer Zufriedenheit",
     ],
   },
 ];
@@ -72,17 +72,17 @@ const STEPS = [
 // y: center=300, top=150, bottom=450
 const NODES = [
   { x: 500,  y: 300 },
-  { x: 1500, y: 150 },
-  { x: 2500, y: 450 },
-  { x: 3500, y: 150 },
+  { x: 1500, y: 210 },
+  { x: 2500, y: 420 },
+  { x: 3500, y: 210 },
   { x: 4500, y: 300 },
 ];
 
 const PATH_D =
-  "M 500,300 C 820,300 1180,150 1500,150 " +
-  "C 1820,150 2180,450 2500,450 " +
-  "C 2820,450 3180,150 3500,150 " +
-  "C 3820,150 4180,300 4500,300";
+  "M 500,300 C 820,300 1180,210 1500,210 " +
+  "C 1820,210 2180,420 2500,420 " +
+  "C 2820,420 3180,210 3500,210 " +
+  "C 3820,210 4180,300 4500,300";
 
 export function ProzessPath() {
   const sectionRef  = useRef(null);
@@ -500,7 +500,7 @@ export function ProzessPath() {
       <div
         style={{
           position: "relative",
-          height: "100vh", overflow: "hidden",
+          height: "100vh", overflowX: "clip", overflowY: "visible",
           background: "#FDFCF8",
         }}
       >
@@ -514,24 +514,16 @@ export function ProzessPath() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-            <span style={{ display: "block", height: 1, width: 32, background: "#0E2A6B" }} />
+            <span style={{ display: "block", height: 1, width: 32, background: "#8B1A1A" }} />
             <span style={{
               fontFamily: "DM Sans, sans-serif",
               fontSize: "0.68rem", fontWeight: 600,
               letterSpacing: "0.25em", textTransform: "uppercase",
-              color: "#0E2A6B",
+              color: "#8B1A1A",
             }}>
-              Der Schmid-Bau-Prozess
+              Unser gemeinsamer Prozess
             </span>
           </div>
-          <h2 style={{
-            fontFamily: "Syne, sans-serif", fontWeight: 800,
-            fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-            color: "#0A1628", lineHeight: 1.1, letterSpacing: "-0.02em",
-            margin: 0,
-          }}>
-            Von der Idee<br />zum Schlüssel.
-          </h2>
         </div>
 
         {/* Horizontal strip */}
@@ -559,7 +551,7 @@ export function ProzessPath() {
           >
             <path
               d={PATH_D}
-              stroke="rgba(14,42,107,0.12)"
+              stroke="rgba(139,26,26,0.12)"
               strokeWidth="2"
               fill="none"
               strokeLinecap="round"
@@ -567,7 +559,7 @@ export function ProzessPath() {
             <path
               ref={pathRef}
               d={PATH_D}
-              stroke="rgba(14,42,107,0.70)"
+              stroke="rgba(139,26,26,0.70)"
               strokeWidth="2"
               fill="none"
               strokeLinecap="round"
@@ -578,9 +570,9 @@ export function ProzessPath() {
                 ref={(el) => (dotRefs.current[i] = el)}
                 style={{ transformOrigin: `${node.x}px ${node.y}px` }}
               >
-                <circle cx={node.x} cy={node.y} r="22" fill="rgba(14,42,107,0.10)" />
-                <circle cx={node.x} cy={node.y} r="13" fill="#FDFCF8" stroke="rgba(14,42,107,0.65)" strokeWidth="2" />
-                <circle cx={node.x} cy={node.y} r="4.5" fill="#0E2A6B" />
+                <circle cx={node.x} cy={node.y} r="22" fill="rgba(139,26,26,0.10)" />
+                <circle cx={node.x} cy={node.y} r="13" fill="#FDFCF8" stroke="rgba(139,26,26,0.65)" strokeWidth="2" />
+                <circle cx={node.x} cy={node.y} r="4.5" fill="#8B1A1A" />
               </g>
             ))}
           </svg>
@@ -611,8 +603,8 @@ export function ProzessPath() {
                   position: "relative",
                   width: "100%", aspectRatio: "16/9",
                   borderRadius: 4, overflow: "hidden",
-                  border: "1px solid rgba(14,42,107,0.15)",
-                  boxShadow: "0 18px 44px -16px rgba(14,42,107,0.20)",
+                  border: "1px solid rgba(139,26,26,0.15)",
+                  boxShadow: "0 18px 44px -16px rgba(139,26,26,0.20)",
                 }}>
                   {step.img && (
                     <img
@@ -628,7 +620,7 @@ export function ProzessPath() {
                   )}
                   <div style={{
                     position: "absolute", inset: 0,
-                    background: "linear-gradient(135deg, rgba(7,25,74,0.35) 0%, rgba(7,25,74,0) 50%, rgba(7,25,74,0.55) 100%)",
+                    background: "linear-gradient(135deg, rgba(92,15,15,0.35) 0%, rgba(92,15,15,0) 50%, rgba(92,15,15,0.55) 100%)",
                   }} />
                   <span style={{
                     position: "absolute", bottom: 10, left: 12,
@@ -658,7 +650,7 @@ export function ProzessPath() {
               zIndex: 2,
               willChange: "transform, opacity",
               ...(above
-                ? { bottom: `calc(${100 - nyVh + 3}vh)` }
+                ? { bottom: `min(calc(${100 - nyVh + 3}vh), calc(100vh - 5.5rem - 280px))` }
                 : { top:    `calc(${nyVh + 3}vh)` }),
             };
 
@@ -680,7 +672,7 @@ export function ProzessPath() {
                         }}>
                           <span style={{
                             width: 4, height: 4, borderRadius: "50%",
-                            background: "#0E2A6B", flexShrink: 0, marginTop: 6,
+                            background: "#8B1A1A", flexShrink: 0, marginTop: 6,
                           }} />
                           {b}
                         </li>
@@ -688,7 +680,7 @@ export function ProzessPath() {
                     </ul>
                     <h3 className="card-title" style={{
                       fontFamily: "Syne, sans-serif", fontWeight: 700,
-                      fontSize: "1.35rem", color: "#0A1628",
+                      fontSize: "1.35rem", color: "#28282B",
                       marginBottom: 6, lineHeight: 1.2, textAlign: "center",
                     }}>
                       {step.title}
@@ -697,19 +689,19 @@ export function ProzessPath() {
                       textAlign: "center", fontFamily: "DM Sans, sans-serif",
                       fontSize: "0.72rem", fontWeight: 600,
                       letterSpacing: "0.25em", textTransform: "uppercase",
-                      color: "#0E2A6B", marginBottom: 14,
+                      color: "#8B1A1A", marginBottom: 14,
                     }}>
                       {step.num}
                     </p>
                     <div className="card-icon" style={{ display: "flex", justifyContent: "center" }}>
                       <div style={{
                         width: 62, height: 62,
-                        border: "1.5px solid rgba(14,42,107,0.25)",
+                        border: "1.5px solid rgba(139,26,26,0.25)",
                         borderRadius: "50%",
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        background: "rgba(14,42,107,0.06)",
+                        background: "rgba(139,26,26,0.06)",
                       }}>
-                        <Icon size={26} color="rgba(14,42,107,0.80)" />
+                        <Icon size={26} color="rgba(139,26,26,0.80)" />
                       </div>
                     </div>
                   </>
@@ -718,25 +710,25 @@ export function ProzessPath() {
                     <div className="card-icon" style={{ display: "flex", justifyContent: "center", marginBottom: 14 }}>
                       <div style={{
                         width: 62, height: 62,
-                        border: "1.5px solid rgba(14,42,107,0.25)",
+                        border: "1.5px solid rgba(139,26,26,0.25)",
                         borderRadius: "50%",
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        background: "rgba(14,42,107,0.06)",
+                        background: "rgba(139,26,26,0.06)",
                       }}>
-                        <Icon size={26} color="rgba(14,42,107,0.80)" />
+                        <Icon size={26} color="rgba(139,26,26,0.80)" />
                       </div>
                     </div>
                     <p className="card-num" style={{
                       textAlign: "center", fontFamily: "DM Sans, sans-serif",
                       fontSize: "0.72rem", fontWeight: 600,
                       letterSpacing: "0.25em", textTransform: "uppercase",
-                      color: "#0E2A6B", marginBottom: 6,
+                      color: "#8B1A1A", marginBottom: 6,
                     }}>
                       {step.num}
                     </p>
                     <h3 className="card-title" style={{
                       fontFamily: "Syne, sans-serif", fontWeight: 700,
-                      fontSize: "1.35rem", color: "#0A1628",
+                      fontSize: "1.35rem", color: "#28282B",
                       marginBottom: 14, lineHeight: 1.2, textAlign: "center",
                     }}>
                       {step.title}
@@ -751,7 +743,7 @@ export function ProzessPath() {
                         }}>
                           <span style={{
                             width: 4, height: 4, borderRadius: "50%",
-                            background: "#0E2A6B", flexShrink: 0, marginTop: 6,
+                            background: "#8B1A1A", flexShrink: 0, marginTop: 6,
                           }} />
                           {b}
                         </li>
@@ -773,7 +765,7 @@ export function ProzessPath() {
           transform: "translateY(-50%)",
             fontFamily: "Syne, sans-serif", fontWeight: 900,
             fontSize: "clamp(2.4rem, 4.5vw, 4.5rem)",
-            color: "rgba(14,42,107,0.07)", userSelect: "none",
+            color: "rgba(139,26,26,0.07)", userSelect: "none",
             zIndex: 0, letterSpacing: "-0.04em",
             whiteSpace: "nowrap", pointerEvents: "none",
           }}
@@ -789,12 +781,12 @@ export function ProzessPath() {
           <span style={{
             fontFamily: "DM Sans, sans-serif", fontSize: "0.68rem",
             letterSpacing: "0.2em", textTransform: "uppercase",
-            color: "rgba(14,42,107,0.40)",
+            color: "rgba(139,26,26,0.40)",
           }}>
             Scrollen
           </span>
-          <span style={{ display: "block", height: 1, width: 28, background: "rgba(14,42,107,0.25)" }} />
-          <span style={{ color: "rgba(14,42,107,0.50)", fontSize: "0.9rem" }}>→</span>
+          <span style={{ display: "block", height: 1, width: 28, background: "rgba(139,26,26,0.25)" }} />
+          <span style={{ color: "rgba(139,26,26,0.50)", fontSize: "0.9rem" }}>→</span>
         </div>
       </div>
     </section>

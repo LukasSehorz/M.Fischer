@@ -4,11 +4,11 @@ import React from "react";
 
 export function Header65() {
   return (
-    <section className="relative w-full overflow-hidden bg-background-alternative" style={{ height: "50vh" }}>
+    <section className="relative w-full overflow-hidden" style={{ height: "70vh", background: "#e8e4de" }}>
       <img
-        src="/images/bild15.jpeg"
-        alt="Schmid-Bau GmbH"
-        className="absolute inset-0 h-full w-full object-cover"
+        src="/images/bild32.jpeg"
+        alt="Markus Fischer"
+        className="absolute inset-0 h-full w-full object-contain"
       />
     </section>
   );

@@ -870,14 +870,14 @@ export function VideoScrollSection() {
         <div
           ref={overlayRef}
           className="absolute inset-0 z-[45] flex flex-col justify-center px-[5%] pt-32 md:pt-40 pb-32 md:pb-40"
-          style={{ background: "#0E2A6B" }}
+          style={{ background: "#8B1A1A" }}
         >
           {/* Layered gradient (matches Hero aesthetic) */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(180deg, rgba(14,42,107,1) 0%, rgba(10,32,89,1) 45%, rgba(7,25,74,1) 100%)",
+                "linear-gradient(180deg, rgba(139,26,26,1) 0%, rgba(107,21,21,1) 45%, rgba(92,15,15,1) 100%)",
             }}
           />
           {/* Soft gold radial glow (matches Hero) */}
@@ -949,7 +949,7 @@ export function VideoScrollSection() {
 
         {/* Atmospheric gradient */}
         <div className="pointer-events-none absolute inset-0 z-10"
-          style={{ background: "linear-gradient(to top, rgba(7,25,74,0.65) 0%, rgba(7,25,74,0.08) 50%, rgba(7,25,74,0.2) 100%)" }}
+          style={{ background: "linear-gradient(to top, rgba(92,15,15,0.65) 0%, rgba(92,15,15,0.08) 50%, rgba(92,15,15,0.2) 100%)" }}
         />
 
         {/* Vignette */}
@@ -1067,7 +1067,7 @@ export function VideoScrollSection() {
 
         {/* Loading screen */}
         {!isReady && (
-          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#0E2A6B]">
+          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#8B1A1A]">
             <p className="mb-4 font-body text-xs uppercase tracking-[0.3em] text-white/40">Wird geladen</p>
             <div className="h-px w-48 bg-white/10">
               <div

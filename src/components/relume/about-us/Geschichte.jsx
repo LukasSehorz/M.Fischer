@@ -8,32 +8,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
   {
-    year: "1992",
+    year: "2020",
     title: "Die Gründung",
-    desc: "Die Schmid-Bau GmbH wird als Familienbetrieb gegründet. Von Anfang an stehen Handwerk, Verlässlichkeit und persönliche Betreuung im Mittelpunkt.",
-    detail: "Was als Familienbetrieb in der Region Erding begann, legte den Grundstein für über drei Jahrzehnte Erfolgsgeschichte im bayerischen Bauhandwerk.",
-    img: "/images/timeline/1952.jpg",
+    desc: "M. Fischer Maschinenbetrieb wird gegründet. Von Anfang an stehen persönliche Ausführung, Zuverlässigkeit und faire Preise im Mittelpunkt.",
+    detail: "Was in Rott am Inn als Einmannbetrieb begann, legte den Grundstein für einen soliden Ruf in der Region – für Tiefbau, Abbruch und Außenanlagen.",
   },
   {
-    year: "2007",
-    title: "Michael Schmid übernimmt",
-    desc: "Michael Schmid übernimmt das väterliche Unternehmen und führt es mit denselben Grundwerten weiter: Qualität, Persönlichkeit und Beständigkeit.",
-    detail: "Unter seiner Führung entwickelt sich das Leistungsspektrum stetig weiter – von Hochbau und Sanierung bis zu Tiefbau und landwirtschaftlichen Hallen.",
-    img: "/images/timeline/1970.jpg",
+    year: "2022",
+    title: "Erste Stammkunden",
+    desc: "Durch konsequente Qualität und persönlichen Einsatz auf jeder Baustelle entstehen die ersten dauerhaften Kundenbeziehungen in der Region Inn-Salzach.",
+    detail: "Mundpropaganda und positive Bewertungen auf Google und MyHammer sprechen für die Qualität der Arbeit – die Auftragslage wächst stetig.",
   },
   {
-    year: "2015",
-    title: "Neue Heimat",
-    desc: "Schmid-Bau zieht in eine ehemalige Schnapsbrennerei in Berglern ein – ein Ort mit Geschichte und Charakter, der perfekt zum Unternehmen passt.",
-    detail: "Das neue Betriebsgelände bietet optimale Voraussetzungen für einen modernen Fuhrpark, Materiallager und Baustoffhandel.",
-    img: "/images/timeline/1990.jpg",
+    year: "2024",
+    title: "Maschinenpark erweitert",
+    desc: "Investitionen in moderne Maschinen und Geräte ermöglichen ein breiteres Leistungsspektrum und noch effizientere Ausführung auf den Baustellen.",
+    detail: "Von Baggerarbeiten über Baumfällungen bis zu Abbruch und Außenanlagen – der Betrieb ist für alle Aufgaben bestens ausgerüstet.",
   },
   {
     year: "Heute",
-    title: "30+ Jahre Baukultur",
-    desc: "Über 30 Jahre nach der Gründung steht Schmid-Bau GmbH für bayerisches Handwerk auf höchstem Niveau. Mit zehnköpfigem Team und breitem Leistungsspektrum.",
-    detail: "Von schlüsselfertigem Wohnungsbau bis Tiefbau, Gerüstbau, Transporte und Baustoffhandel – weit über die Region Erding hinaus bekannt und geschätzt.",
-    img: "/images/timeline/heute.jpg",
+    title: "5+ Jahre Erfahrung",
+    desc: "Fünf Jahre nach der Gründung steht M. Fischer Maschinenbetrieb für verlässliches Handwerk in der Region. Google 5/5 – MyHammer 4,8/5.",
+    detail: "Persönlich auf jeder Baustelle, flexibel bei jedem Auftrag und zuverlässig bei jedem Termin – das ist das Versprechen von M. Fischer.",
   },
 ];
 
@@ -56,22 +52,23 @@ const splitWords = (el, text) => {
 };
 
 export function Geschichte() {
-  const sectionRef = useRef(null);
-  const eyebrowRef = useRef(null);
-  const headingRef = useRef(null);
-  const subRef     = useRef(null);
+  const sectionRef  = useRef(null);
+  const eyebrowRef  = useRef(null);
+  const headingRef  = useRef(null);
+  const subRef      = useRef(null);
   const timelineRef = useRef(null);
-  const lineRef = useRef(null);
-  const dotRefs = useRef([]);
-  const cardRefs = useRef([]);
+  const lineRef     = useRef(null);
+  const dotRefs     = useRef([]);
+  const cardRefs    = useRef([]);
+  const ghostRefs   = useRef([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      // ── Heading intro: eyebrow + word-reveal heading + subtitle ────────
+      // Heading intro
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Unsere Geschichte")
+        ? splitWords(headingRef.current, "Meine Geschichte")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
       gsap.set(subRef.current, { y: 22, opacity: 0 });
@@ -88,7 +85,7 @@ export function Geschichte() {
         .to(headingWords, { yPercent: 0, duration: 1.0, ease: "expo.out", stagger: 0.07 }, "-=0.35")
         .to(subRef.current, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.5");
 
-      // Gold thread grows from top to bottom as timeline scrolls into view
+      // Timeline line grows with scroll
       gsap.fromTo(
         lineRef.current,
         { scaleY: 0 },
@@ -105,62 +102,40 @@ export function Geschichte() {
         }
       );
 
-      // Each dot pops in when the line reaches it
+      // Dots pop in
       dotRefs.current.forEach((dot) => {
         if (!dot) return;
-        gsap.fromTo(
-          dot,
+        gsap.fromTo(dot,
           { scale: 0, opacity: 0 },
           {
-            scale: 1,
-            opacity: 1,
-            duration: 0.5,
-            ease: "back.out(2.5)",
-            scrollTrigger: {
-              trigger: dot,
-              start: "top 72%",
-              toggleActions: "play none none reverse",
-            },
+            scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.5)",
+            scrollTrigger: { trigger: dot, start: "top 72%", toggleActions: "play none none reverse" },
           }
         );
       });
 
-      // Each milestone card slides in from the right + image clip-path wipe
+      // Cards slide in from right
       cardRefs.current.forEach((card) => {
         if (!card) return;
-        const img = card.querySelector("[data-milestone-img]");
-        const innerImg = img?.querySelector("img");
-
-        gsap.fromTo(
-          card,
+        gsap.fromTo(card,
           { opacity: 0, x: 60 },
           {
-            opacity: 1,
-            x: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
+            opacity: 1, x: 0, duration: 0.8, ease: "power3.out",
+            scrollTrigger: { trigger: card, start: "top 80%", toggleActions: "play none none reverse" },
           }
         );
+      });
 
-        if (img) {
-          gsap.set(img, { clipPath: "inset(0 0 100% 0)" });
-          gsap.set(innerImg, { scale: 1.2 });
-
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: card,
-              start: "top 78%",
-              toggleActions: "play none none reverse",
-            },
-          })
-            .to(img, { clipPath: "inset(0 0 0% 0)", duration: 1.0, ease: "expo.inOut" }, 0.2)
-            .to(innerImg, { scale: 1, duration: 1.3, ease: "power3.out" }, 0.3);
-        }
+      // Ghost year numbers fade in and drift upward slowly
+      ghostRefs.current.forEach((ghost) => {
+        if (!ghost) return;
+        gsap.fromTo(ghost,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
+            scrollTrigger: { trigger: ghost, start: "top 85%", toggleActions: "play none none reverse" },
+          }
+        );
       });
 
     }, sectionRef);
@@ -169,9 +144,9 @@ export function Geschichte() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="overflow-hidden" style={{ backgroundColor: "#FDFCF8" }}>
+    <section ref={sectionRef} className="overflow-hidden" style={{ backgroundColor: "#0e0e0e" }}>
 
-      {/* Top third — image background with heading */}
+      {/* Heading */}
       <div
         className="relative px-[5%] py-16 md:py-24 lg:py-28"
         style={{
@@ -180,138 +155,124 @@ export function Geschichte() {
           backgroundPosition: "center 40%",
         }}
       >
-        {/* Overlay so text stays readable */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to bottom, rgba(240,240,239,0.82) 0%, rgba(240,240,239,0.92) 60%, rgba(240,240,239,1) 100%)",
-          }}
-        />
-
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(14,14,14,0.80) 0%, rgba(14,14,14,0.92) 60%, rgba(14,14,14,1) 100%)" }} />
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
-              Seit 1992
+            <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
+              Seit 2020
             </p>
             <h2
               ref={headingRef}
-              className="mb-5 font-heading font-bold leading-tight tracking-tight text-[#0A1628]"
+              className="mb-5 font-heading font-bold leading-tight tracking-tight text-white"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
             >
-              Unsere Geschichte
+              Meine Geschichte
             </h2>
-            <p ref={subRef} className="font-body text-base leading-relaxed text-[#0A1628]/55">
-              Familienunternehmen seit 1992.<br />Ein Anspruch: Projekte für Generationen.
+            <p ref={subRef} className="font-body text-base leading-relaxed text-white/50">
+              Einmannbetrieb seit 2020.<br />Ein Anspruch: Persönlich. Flexibel. Zuverlässig.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bottom two thirds — timeline on plain background */}
+      {/* Timeline */}
       <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
         <div className="container">
+          <div ref={timelineRef} className="relative">
 
-          {/* Timeline */}
-        <div ref={timelineRef} className="relative">
-
-          {/* Red thread — full height, grows with scroll */}
-          <div
-            className="absolute top-0 bottom-0"
-            style={{
-              left: "18px",
-              width: "12px",
-              background: "linear-gradient(to right, rgba(14,42,107,0.18) 0%, #DDDED8 30%, #E5E4DC 50%, #DDDED8 70%, rgba(14,42,107,0.12) 100%)",
-              borderRadius: "6px",
-            }}
-          >
+            {/* Vertical line track */}
             <div
-              ref={lineRef}
-              className="absolute inset-0 origin-top"
-              style={{
-                borderRadius: "6px",
-                background: "linear-gradient(to right, rgba(7,25,74,0.8) 0%, #0E2A6B 25%, #2C4F9D 50%, #0E2A6B 75%, rgba(7,25,74,0.8) 100%)",
-                boxShadow: "2px 0 8px rgba(14,42,107,0.45), -1px 0 4px rgba(0,0,0,0.15)",
-                transform: "scaleY(0)",
-              }}
-            />
-          </div>
-
-          {/* Milestones */}
-          <div>
-            {milestones.map((m, i) => (
+              className="absolute top-0 bottom-0"
+              style={{ left: "23px", width: "2px", background: "rgba(255,255,255,0.06)", borderRadius: "2px" }}
+            >
               <div
-                key={m.year}
-                className="relative grid grid-cols-[48px_1fr] pb-14 last:pb-0"
-              >
-                {/* Dot on the thread — 3D sphere */}
-                <div className="flex justify-center pt-2 z-10">
-                  <div
-                    ref={(el) => (dotRefs.current[i] = el)}
-                    className="flex-shrink-0"
-                    style={{
-                      width: "22px",
-                      height: "22px",
-                      borderRadius: "50%",
-                      background: "radial-gradient(circle at 35% 32%, #5C7BD3, #0E2A6B 48%, #07194A 100%)",
-                      boxShadow: "0 0 0 3px #f0f0ef, 0 0 0 5px rgba(14,42,107,0.5), 2px 3px 8px rgba(0,0,0,0.3)",
-                      opacity: 0,
-                      transform: "scale(0)",
-                    }}
-                  />
-                </div>
+                ref={lineRef}
+                className="absolute inset-0 origin-top"
+                style={{
+                  borderRadius: "2px",
+                  background: "linear-gradient(to bottom, #8B1A1A, #C94040 50%, #8B1A1A)",
+                  boxShadow: "0 0 12px rgba(139,26,26,0.6)",
+                  transform: "scaleY(0)",
+                }}
+              />
+            </div>
 
-                {/* Milestone content */}
+            {/* Milestones */}
+            <div>
+              {milestones.map((m, i) => (
                 <div
-                  ref={(el) => (cardRefs.current[i] = el)}
-                  className="pl-8 md:pl-12 grid gap-8 md:grid-cols-[1fr_280px] md:gap-10 md:items-start"
-                  style={{ opacity: 0 }}
+                  key={m.year}
+                  className="relative grid grid-cols-[48px_1fr] pb-20 last:pb-0"
                 >
-                  <div>
-                    {/* Year + number */}
-                    <div className="flex items-baseline gap-4 mb-3">
-                      <span
-                        className="font-heading font-bold leading-none text-[#0A1628]/[0.07] select-none"
-                        style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
-                      >
-                        {m.year}
-                      </span>
-                      <span className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-[#0E2A6B]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
+                  {/* Dot */}
+                  <div className="flex justify-center pt-3 z-10">
+                    <div
+                      ref={(el) => (dotRefs.current[i] = el)}
+                      style={{
+                        width: "18px",
+                        height: "18px",
+                        borderRadius: "50%",
+                        background: "radial-gradient(circle at 35% 32%, #C94040, #8B1A1A 48%, #5C0F0F 100%)",
+                        boxShadow: "0 0 0 3px #0e0e0e, 0 0 0 5px rgba(139,26,26,0.5), 0 0 16px rgba(139,26,26,0.4)",
+                        opacity: 0,
+                        transform: "scale(0)",
+                        flexShrink: 0,
+                      }}
+                    />
+                  </div>
 
-                    <h3 className="mb-3 font-heading text-2xl font-bold text-[#0A1628] md:text-3xl">
+                  {/* Content */}
+                  <div
+                    ref={(el) => (cardRefs.current[i] = el)}
+                    className="relative pl-8 md:pl-14 overflow-hidden"
+                    style={{ opacity: 0 }}
+                  >
+                    {/* Ghost year watermark */}
+                    <span
+                      ref={(el) => (ghostRefs.current[i] = el)}
+                      className="pointer-events-none absolute right-0 top-[-0.15em] select-none font-heading font-bold leading-none"
+                      style={{
+                        fontSize: "clamp(6rem, 18vw, 16rem)",
+                        color: "rgba(255,255,255,0.03)",
+                        lineHeight: 1,
+                        opacity: 0,
+                      }}
+                    >
+                      {m.year}
+                    </span>
+
+                    {/* Step number */}
+                    <span className="mb-4 block font-body text-[10px] font-semibold uppercase tracking-[0.35em] text-[#8B1A1A]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Year label */}
+                    <p className="mb-2 font-heading font-bold text-white/20" style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", letterSpacing: "0.1em" }}>
+                      {m.year}
+                    </p>
+
+                    <h3 className="mb-4 font-heading text-2xl font-bold text-white md:text-3xl lg:text-4xl">
                       {m.title}
                     </h3>
-                    <p className="mb-2 font-body text-base leading-relaxed text-[#0A1628]/65 max-w-2xl">
+
+                    {/* Weinrot-Linie */}
+                    <div className="mb-6 h-px w-10" style={{ background: "#8B1A1A" }} />
+
+                    <p className="mb-3 font-body text-base leading-relaxed text-white/70 max-w-2xl">
                       {m.desc}
                     </p>
-                    <p className="font-body text-sm leading-relaxed text-[#0A1628]/40 max-w-xl">
+                    <p className="font-body text-sm leading-relaxed text-white/35 max-w-xl">
                       {m.detail}
                     </p>
                   </div>
-
-                  {/* Milestone image */}
-                  <div data-milestone-img className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-md">
-                    <img
-                      src={m.img}
-                      alt={m.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
-                    <span className="absolute bottom-3 left-4 font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-white/85">
-                      {m.year}
-                    </span>
-                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          </div>{/* end timeline relative */}
-        </div>{/* end container */}
-      </div>{/* end bottom section */}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }
