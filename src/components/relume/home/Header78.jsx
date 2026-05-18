@@ -107,10 +107,9 @@ export function Header78() {
         className="hero-bg-img absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform", filter: "saturate(0.85) brightness(0.9)" }}
         muted
+        autoPlay
         playsInline
         preload="auto"
-        fetchPriority="high"
-        poster="/images/hero-aerial-construction.jpg"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
