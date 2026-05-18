@@ -79,19 +79,13 @@ export function Header78() {
     };
   }, []);
 
-  // Start video only after the intro is done (same gate as the GSAP animations)
+  // Start video immediately — plays silently behind the intro screen.
+  // On iOS, video.play() must be called as early as possible (muted videos
+  // are allowed, but delayed calls from setTimeout-fired events are blocked).
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-
-    const playVideo = () => video.play().catch(() => {});
-
-    if (window.__schmidIntroDone === true) {
-      playVideo();
-    } else {
-      window.addEventListener("schmid-intro-complete", playVideo, { once: true });
-      return () => window.removeEventListener("schmid-intro-complete", playVideo);
-    }
+    video.play().catch(() => {});
   }, []);
 
   return (
