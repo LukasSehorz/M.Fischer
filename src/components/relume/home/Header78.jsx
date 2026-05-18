@@ -105,7 +105,7 @@ export function Header78() {
       <video
         ref={videoRef}
         className="hero-bg-img absolute inset-0 h-full w-full object-cover object-center"
-        style={{ willChange: "transform", filter: "saturate(0.85) brightness(0.9)" }}
+        style={{ willChange: "transform" }}
         muted
         autoPlay
         playsInline
@@ -113,6 +113,9 @@ export function Header78() {
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
+
+      {/* Sättigung / Helligkeit als eigenes Overlay statt CSS-filter auf Video (iOS-Fix) */}
+      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.12)", mixBlendMode: "multiply" }} />
 
       {/* Dunkler Verlauf — links dicht, rechts ausblendend */}
       <div
