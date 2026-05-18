@@ -110,7 +110,7 @@ export function Header78() {
         playsInline
         preload="auto"
         fetchPriority="high"
-        poster="/images/prozess-hero.webp"
+        poster="/images/hero-aerial-construction.jpg"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>

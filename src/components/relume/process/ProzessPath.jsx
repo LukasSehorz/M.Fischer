@@ -495,12 +495,12 @@ export function ProzessPath() {
   return (
     <section
       ref={sectionRef}
-      style={{ height: "100vh", position: "relative" }}
+      style={{ height: "100svh", position: "relative" }}
     >
       <div
         style={{
           position: "relative",
-          height: "100vh", overflowX: "clip", overflowY: "visible",
+          height: "100svh", overflowX: "clip", overflowY: "visible",
           background: "#FDFCF8",
         }}
       >
@@ -531,7 +531,7 @@ export function ProzessPath() {
           ref={stripRef}
           style={{
             position: "absolute", top: 0, left: 0,
-            width: "500vw", height: "100vh",
+            width: "500vw", height: "100svh",
             willChange: "transform",
           }}
         >
