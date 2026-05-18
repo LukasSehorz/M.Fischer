@@ -7,17 +7,17 @@ const features = [
   {
     title: "Direkt & Unkompliziert",
     body: "Bei mir gibt es keine langen Entscheidungswege. Ich bin selbst auf der Baustelle – vom ersten Gespräch bis zum letzten Spatenstich.",
-    image: "/images/bild2.png",
+    image: "/images/bild2.webp",
   },
   {
     title: "Qualität ohne Kompromisse",
     body: "Jede Baustelle führe ich mit dem gleichen Anspruch aus: sauber, termingerecht und zum vereinbarten Preis. Keine Überraschungen, keine Nachforderungen.",
-    image: "/images/bild3.png",
+    image: "/images/bild3.webp",
   },
   {
     title: "Verwurzelt im Inntal und Chiemgau",
     body: "Seit 2020 führe ich Projekte im Inntal und Chiemgau aus. Kurze Wege, lokale Kenntnisse – ich kenne die Region.",
-    image: "/images/bild4.png",
+    image: "/images/bild4.webp",
   },
 ];
 
@@ -164,6 +164,7 @@ export function Layout237() {
                 <img
                   src={f.image}
                   alt={f.title}
+                  loading="lazy"
                   className="l237-card-img absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
                   style={{ willChange: "transform" }}
                 />

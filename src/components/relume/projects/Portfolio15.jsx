@@ -28,7 +28,7 @@ const projects = [
     category: "Tiefbau",
     desc: "Verlegung von Drainage- und Abwasserleitungen für ein Einfamilienhaus",
     location: "Rott am Inn",
-    img: "/images/bild6.png",
+    img: "/images/bild6.webp",
     detail: "Ich habe für eine Privatfamilie in Rott am Inn den kompletten Hausanschluss und die Drainage neu verlegt. Saubere Grabenführung, fachgerechte Rohrlage auf Sandbett und termingerechter Abschluss – alles aus einer Hand, ohne Subunternehmer.",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     category: "Abbruch",
     desc: "Abbruch und Entsorgung eines alten Wirtschaftsgebäudes",
     location: "Inntal und Chiemgau",
-    img: "/images/bild7.png",
+    img: "/images/bild7.webp",
     detail: "Ich habe ein altes Wirtschaftsgebäude vollständig zurückgebaut – inklusive Fundamenten, Sortierung des Abbruchmaterials und fachgerechter Entsorgung. Das Grundstück wurde anschließend planiert und für die Neubebauung vorbereitet.",
   },
   {
@@ -46,7 +46,7 @@ const projects = [
     category: "Außenanlagen",
     desc: "Neugestaltung der Außenanlagen eines Einfamilienhauses inkl. Pflasterung",
     location: "Inntal und Chiemgau",
-    img: "/images/bild8.png",
+    img: "/images/bild8.webp",
     detail: "Ich habe die kompletten Außenanlagen eines Einfamilienhauses neu gestaltet: Zufahrt gepflastert, Stellplätze angelegt, Rasenfläche planiert und Beetbegrenzungen gesetzt. Alles wurde nach den Wünschen der Bauherren umgesetzt.",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     category: "Erdarbeiten",
     desc: "Erdarbeiten und Schotteranlage für vier Außenstellplätze",
     location: "Bruckmühl",
-    img: "/images/bild13.png",
+    img: "/images/bild13.webp",
     detail: "Für ein Mehrfamilienhaus in Bruckmühl habe ich vier Stellplätze neu angelegt – Erdaushub, Schotterkoffer, Vlies und Schotteroberfläche. Die Entwässerung wurde direkt mitgeplant und angeschlossen. Fertigstellung in zwei Tagen.",
   },
   {
@@ -64,7 +64,7 @@ const projects = [
     category: "Tiefbau",
     desc: "Neuer Abwasseranschluss für einen Neubau im Inntal und Chiemgau",
     location: "Inntal und Chiemgau",
-    img: "/images/bild14.png",
+    img: "/images/bild14.webp",
     detail: "Ich habe den Kanalgraben für einen Neubau ausgehoben, die Abwasserleitung verlegt und den Anschluss an den öffentlichen Kanal hergestellt. Enge Abstimmung mit dem Bauherrn und der Gemeinde sorgte für reibungslosen Ablauf.",
   },
   {
@@ -73,7 +73,7 @@ const projects = [
     category: "Baumfällungen",
     desc: "Fällung und Entsorgung mehrerer großer Bäume auf einem Privatgrundstück",
     location: "Rott am Inn",
-    img: "/images/bild10.png",
+    img: "/images/bild10.webp",
     detail: "Ich habe auf einem Privatgrundstück in Rott am Inn mehrere große Bäume gefällt, die Stümpfe gerodet und das gesamte Holz abtransportiert. Das Grundstück war anschließend bereit für die weitere Gartengestaltung.",
   },
 ];
@@ -256,6 +256,7 @@ export function Portfolio15() {
                       <img
                         src={p.img}
                         alt={p.title}
+                        loading="lazy"
                         className="h-48 w-full object-cover md:h-full"
                       />
                     </div>

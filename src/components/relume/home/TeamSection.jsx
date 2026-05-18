@@ -8,7 +8,7 @@ const michael = {
   name: "Markus Fischer",
   title: "Inhaber",
   role: "Baumaschinenmeister",
-  image: "/images/bild32.jpeg",
+  image: "/images/bild32.webp",
   email: "m.fischer-mab@web.de",
   bio: "Ich habe meinen Maschinenbetrieb 2020 in Rott am Inn gegründet. Als Baumaschinenmeister führe ich jeden Auftrag persönlich aus – von der ersten Besprechung bis zur Abnahme. Kein Subunternehmer, kein Umweg.",
   facts: [
@@ -149,6 +149,7 @@ export function TeamSection() {
           <img
             src={michael.image}
             alt={michael.name}
+            loading="lazy"
             className="h-full w-full object-cover"
             style={{ objectPosition: "65% 15%" }}
           />

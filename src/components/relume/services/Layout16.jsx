@@ -163,7 +163,7 @@ export function Layout16() {
       {/* Background image */}
       <img
         ref={videoRef}
-        src="/images/bild11.png"
+        src="/images/bild11.webp"
         alt="M. Fischer Maschinenbetrieb"
         className="absolute inset-0 h-full w-full object-cover"
         style={{ willChange: "transform, filter" }}

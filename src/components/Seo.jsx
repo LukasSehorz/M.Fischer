@@ -3,7 +3,7 @@ const DEFAULT_IMAGE = `${SITE_URL}/images/bild31.png`;
 const BRAND = "M. Fischer Bauunternehmen";
 
 export default function Seo({
-  title,
+  title = "",
   description,
   path = "/",
   image = DEFAULT_IMAGE,

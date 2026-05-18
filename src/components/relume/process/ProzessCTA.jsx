@@ -41,9 +41,10 @@ export function ProzessCTA() {
     >
       {/* Background photo */}
       <img
-        src="/images/bild29.png"
+        src="/images/bild29.webp"
         alt=""
         aria-hidden="true"
+        loading="lazy"
         className="cta-bg absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform", opacity: 0.42 }}
       />

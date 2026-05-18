@@ -20,9 +20,8 @@ export default function Page() {
 
           <div className="space-y-10 font-body text-base leading-relaxed text-[#28282B]/75">
 
-            {/* § 5 TMG bleibt korrekt für die Impressumspflicht */}
             <div>
-              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">Angaben gemäß § 5 TMG</h2>
+              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">Angaben gemäß § 5 DDG</h2>
               <p>
                 M. Fischer Maschinenbetrieb<br />
                 Inhaber: Markus Fischer<br />
@@ -85,19 +84,6 @@ export default function Page() {
             <div>
               <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">Streitschlichtung</h2>
               <p>
-                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-                <a
-                  href="https://ec.europa.eu/consumers/odr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#8B1A1A] hover:underline"
-                >
-                  https://ec.europa.eu/consumers/odr/
-                </a>
-                .<br />
-                Unsere E-Mail-Adresse finden Sie oben im Impressum.
-              </p>
-              <p className="mt-4">
                 Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
                 Verbraucherschlichtungsstelle teilzunehmen.
               </p>

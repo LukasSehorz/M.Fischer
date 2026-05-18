@@ -100,8 +100,9 @@ export function Stats17() {
       {/* Background image — clip-path animated wrapper */}
       <div className="s17-bg-clip absolute inset-0 z-0">
         <img
-          src="/images/bild5.png"
+          src="/images/bild5.webp"
           alt="Abgeschlossene Außenanlage"
+          loading="lazy"
           className="s17-bg-img absolute inset-0 size-full object-cover"
           style={{ willChange: "transform" }}
         />

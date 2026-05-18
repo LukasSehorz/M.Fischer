@@ -161,7 +161,7 @@ export function Navbar() {
         {/* Center: logo */}
         <Link to="/" className="flex items-end justify-center self-stretch">
           <img
-            src="/images/bild31.png"
+            src="/images/bild31.webp"
             alt="M. Fischer Maschinenbetrieb"
             style={{ height: 80, width: "auto", objectFit: "contain" }}
           />
@@ -210,7 +210,7 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between py-5 mb-8 border-b border-[#28282B]/10">
                 <img
-                  src="/images/bild31.png"
+                  src="/images/bild31.webp"
                   alt="M. Fischer Maschinenbetrieb"
                   style={{ height: 36, width: "auto", objectFit: "contain" }}
                 />

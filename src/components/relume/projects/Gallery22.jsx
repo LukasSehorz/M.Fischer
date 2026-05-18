@@ -5,27 +5,27 @@ import { gsap } from "../../../utils/gsap";
 
 const photos = [
   {
-    src: "/images/bild15.jpeg",
+    src: "/images/bild15.webp",
     caption: "Ich persönlich im Einsatz – Erdarbeiten mit dem Minibagger direkt am Wohnhaus.",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/images/bild16.jpeg",
+    src: "/images/bild16.webp",
     caption: "Schalungsarbeiten und Stützmauer – solide Ausführung auf jedem Gelände.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/bild17.jpeg",
+    src: "/images/bild17.webp",
     caption: "Außenanlagen neu gestaltet – Innenhof und Zugänge gepflastert nach Kundenwunsch.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/bild18.jpeg",
+    src: "/images/bild18.webp",
     caption: "Geländearbeiten im Grünen – Grundstück vorbereitet und planiert.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/bild19.jpeg",
+    src: "/images/bild19.webp",
     caption: "Rodung und Baumfällung – Grundstück bereit für die weitere Bebauung.",
     span: "col-span-1 row-span-1",
   },

@@ -43,8 +43,9 @@ export function ProzessHero() {
 
       {/* Background image */}
       <img
-        src="/images/bild23.png"
+        src="/images/bild23.webp"
         alt="M. Fischer Maschinenbetrieb – Prozess"
+        fetchpriority="high"
         className="prozess-hero-bg absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform" }}
       />

@@ -59,7 +59,7 @@ export function Footer() {
           <div>
             <Link to="/" className="mb-6 inline-block">
               <img
-                src="/images/bild31.png"
+                src="/images/bild31.webp"
                 alt="M. Fischer Maschinenbetrieb"
                 style={{ height: 40, width: "auto", objectFit: "contain" }}
               />

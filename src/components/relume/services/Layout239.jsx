@@ -5,35 +5,35 @@ import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 const services = [
   {
-    image: "/images/bild9.png",
+    image: "/images/bild9.webp",
     num: "01",
     title: "Tiefbau",
     body: "Ich übernehme alle Tiefbauarbeiten – von Leitungsgräben und Hausanschlüssen bis zu Drainagen. Sauber ausgeführt, termingerecht abgeschlossen.",
     tags: ["Leitungsgräben", "Hausanschlüsse", "Drainage"],
   },
   {
-    image: "/images/bild7.png",
+    image: "/images/bild7.webp",
     num: "02",
     title: "Abbruch",
     body: "Ich führe Abbrüche aller Art durch – von einzelnen Bauteilen bis zum kompletten Gebäuderückbau. Inklusive fachgerechter Entsorgung.",
     tags: ["Gebäudeabbruch", "Rückbau", "Entsorgung"],
   },
   {
-    image: "/images/bild6.png",
+    image: "/images/bild6.webp",
     num: "03",
     title: "Erdarbeiten & Baggerarbeiten",
     body: "Mit meinem Bagger übernehme ich Aushub, Planiererarbeiten und Bodenverdichtung. Präzise, effizient und für jede Grundstücksgröße geeignet.",
     tags: ["Aushub", "Planieren", "Bodenverdichtung"],
   },
   {
-    image: "/images/bild8.png",
+    image: "/images/bild8.webp",
     num: "04",
     title: "Außenanlagen",
     body: "Ich gestalte Zufahrten, Stellplätze, Wege und Gartenbereiche – von der Planung bis zur fertigen Umsetzung aus einer Hand.",
     tags: ["Zufahrten", "Pflasterung", "Gartengestaltung"],
   },
   {
-    image: "/images/bild10.png",
+    image: "/images/bild10.webp",
     num: "05",
     title: "Baumfällungen",
     body: "Ich fälle Bäume jeder Größe sicher und fachgerecht – inklusive Stubbenrodung und Abtransport des Holzes auf Wunsch.",
@@ -269,8 +269,8 @@ export function Layout239() {
                   data-card-image
                   src={s.image}
                   alt={s.title}
-                  loading="eager"
-                  decoding="sync"
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
                 <div

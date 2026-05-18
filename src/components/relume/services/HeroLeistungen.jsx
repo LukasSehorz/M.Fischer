@@ -156,7 +156,7 @@ export function HeroLeistungen() {
       {/* Background image */}
       <img
         ref={imageRef}
-        src="/images/bild9.png"
+        src="/images/bild9.webp"
         alt="M. Fischer Maschinenbetrieb – Leistungen"
         className="absolute inset-0 h-full w-full object-cover"
         style={{ willChange: "transform, filter" }}

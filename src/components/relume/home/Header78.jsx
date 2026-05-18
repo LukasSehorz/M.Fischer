@@ -108,6 +108,9 @@ export function Header78() {
         style={{ willChange: "transform", filter: "saturate(0.85) brightness(0.9)" }}
         muted
         playsInline
+        preload="auto"
+        fetchpriority="high"
+        poster="/images/prozess-hero.webp"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>

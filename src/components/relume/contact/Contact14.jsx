@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 
 export function Contact14() {
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   return (
     <section className="px-[5%] pt-10 pb-16 md:pt-14 md:pb-24" style={{ backgroundColor: "#FDFCF8" }}>
       <div className="container">
@@ -28,18 +30,42 @@ export function Contact14() {
             </p>
           </div>
 
-          {/* Right: Google Maps */}
+          {/* Right: Google Maps (2-Klick-Lösung gemäß § 25 TDDDG) */}
           <div className="overflow-hidden rounded-sm" style={{ minHeight: 280 }}>
-            <iframe
-              title="M. Fischer Maschinenbetrieb Standort"
-              src="https://maps.google.com/maps?q=Ritzmehring+1%2C+83543+Rott+am+Inn&t=&z=16&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: 280 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            {mapLoaded ? (
+              <iframe
+                title="M. Fischer Maschinenbetrieb Standort"
+                src="https://maps.google.com/maps?q=Ritzmehring+1%2C+83543+Rott+am+Inn&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: 280 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div
+                className="flex flex-col items-center justify-center gap-4 rounded-sm h-full w-full"
+                style={{ minHeight: 280, backgroundColor: "#F0EDE6", border: "1px solid #E0D9CF" }}
+              >
+                <BiMap className="size-8 text-[#8B1A1A]/50" />
+                <div className="text-center px-6">
+                  <p className="font-body text-sm font-semibold text-[#28282B] mb-1">
+                    Ritzmehring 1, 83543 Rott am Inn
+                  </p>
+                  <p className="font-body text-xs text-[#28282B]/50 mb-4">
+                    Durch das Laden der Karte stimmen Sie der Übertragung Ihrer IP-Adresse an Google zu.
+                  </p>
+                  <button
+                    onClick={() => setMapLoaded(true)}
+                    className="font-body text-sm font-semibold px-5 py-2 rounded-sm transition-colors duration-200"
+                    style={{ backgroundColor: "#8B1A1A", color: "#FDFCF8" }}
+                  >
+                    Karte laden
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

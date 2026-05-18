@@ -7,28 +7,28 @@ const machines = [
   {
     num: "01",
     name: "Minibagger",
-    img: "/images/bild9.png",
+    img: "/images/bild9.webp",
     tags: ["Tiefbau", "Erdarbeiten", "Außenanlagen"],
     desc: "Kompakt und wendig – für Kanalgräben, Aushub und Arbeiten in engen Bereichen direkt am Haus.",
   },
   {
     num: "02",
     name: "Anhänger",
-    img: "/images/bild20.png",
+    img: "/images/bild20.webp",
     tags: ["Transport", "Eigenregie"],
     desc: "Alle Geräte werden selbst transportiert – kein Subunternehmer, keine Wartezeiten.",
   },
   {
     num: "03",
     name: "Verdichtungsgeräte",
-    img: "/images/bild21.png",
+    img: "/images/bild21.webp",
     tags: ["Rüttelplatte", "Pflasterarbeiten", "Tiefbau"],
     desc: "Rüttelplatte und Stampfer für dauerhaft tragfähige Unterböden bei Stellplätzen und Wegen.",
   },
   {
     num: "04",
     name: "Forstausrüstung",
-    img: "/images/bild22.png",
+    img: "/images/bild22.webp",
     tags: ["Baumfällung", "Rodung", "Grundstückspflege"],
     desc: "Motorsäge und Freischneider – Fällung, Rückschnitt und vollständige Rodung aus einer Hand.",
   },
@@ -150,6 +150,7 @@ export function Maschinenpark() {
                     src={m.img}
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     style={{ opacity: 0.35 }}
                   />

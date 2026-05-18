@@ -66,13 +66,19 @@ export default function Page() {
               <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">2. Hosting</h2>
               <p className="mb-4">
                 Diese Website wird bei folgendem Anbieter gehostet:{" "}
-                <strong className="text-[#8B1A1A]">[BITTE EINTRAGEN: Name des Hosters, z. B. Vercel / Netlify / Strato / IONOS / ...]</strong>
+                <strong>Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco, California 94104, USA.</strong>
               </p>
               <p className="mb-4">
                 Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des
                 Hosters gespeichert. Hierbei kann es sich um IP-Adressen, Kontaktanfragen, Meta- und
                 Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Webseitenzugriffe und sonstige Daten
                 handeln, die über eine Website generiert werden.
+              </p>
+              <p className="mb-4">
+                Da Netlify ein US-amerikanisches Unternehmen ist, können Daten in die USA übertragen werden.
+                Netlify hat sich den EU-Standardvertragsklauseln (SCCs) gemäß Art. 46 Abs. 2 lit. c DSGVO
+                unterworfen, die ein angemessenes Datenschutzniveau gewährleisten. Mit Netlify wurde ein
+                Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO abgeschlossen.
               </p>
               <p>
                 Die Nutzung des Hosters erfolgt zum Zweck der Vertragserfüllung gegenüber unseren potenziellen
@@ -244,21 +250,12 @@ export default function Page() {
 
             {/* 9. GOOGLE FONTS */}
             <div>
-              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">9. Google Fonts</h2>
-              <p className="mb-4">
-                Diese Website verwendet Google Fonts. Anbieter ist die Google Ireland Limited, Gordon House,
-                Barrow Street, Dublin 4, Irland.
-              </p>
-              <p className="mb-4">
-                Google Fonts werden lokal auf dem Server dieser Website eingebunden. Eine Verbindung zu Servern
-                von Google findet dabei nicht statt.
-              </p>
-              <p className="mb-4 text-sm p-3 border border-[#8B1A1A]/20 rounded bg-[#8B1A1A]/5 text-[#28282B]/80">
-                <strong className="text-[#8B1A1A]">Hinweis für den Websitebetreiber:</strong> Sollten die Schriften
-                noch über fonts.googleapis.com geladen werden, ist eine IP-Adresse des Besuchers an Google zu
-                übermitteln, was nach dem Urteil des LG München I (Az. 3 O 17493/20, 20.01.2022) ohne Einwilligung
-                unzulässig ist. In diesem Fall müssen die Schriften self-hosted oder ein Cookie-Consent-Banner
-                eingebunden werden.
+              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">9. Schriftarten (lokal eingebunden)</h2>
+              <p>
+                Diese Website verwendet Web-Schriftarten (Syne, DM Sans, Playfair Display), die vollständig
+                lokal auf dem Server dieser Website gespeichert und eingebunden sind. Eine Verbindung zu
+                externen Servern – insbesondere zu Google-Servern – findet dabei nicht statt. Es werden keine
+                personenbezogenen Daten an Dritte übertragen.
               </p>
             </div>
 
@@ -270,19 +267,16 @@ export default function Page() {
                 Gordon House, Barrow Street, Dublin 4, Irland.
               </p>
               <p className="mb-4">
-                Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern.
-                Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und
-                dort gespeichert. Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung.
-                Wenn Google Maps aktiviert ist, kann Google zum Zweck der einheitlichen Darstellung der
-                Schriftarten Google Fonts verwenden. Beim Aufruf von Google Maps lädt Ihr Browser die
-                benötigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.
+                Google Maps wird auf dieser Website erst nach Ihrer aktiven Einwilligung geladen
+                (sog. 2-Klick-Lösung). Erst wenn Sie auf „Karte laden" klicken, wird eine Verbindung zu
+                den Servern von Google hergestellt. Dabei wird Ihre IP-Adresse an Google übertragen und
+                in der Regel auf Servern in den USA gespeichert. Der Anbieter dieser Seite hat keinen
+                Einfluss auf diese Datenübertragung.
               </p>
               <p className="mb-4">
-                Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer
-                Online-Angebote und an einer leichten Auffindbarkeit der von uns auf der Website angegebenen
-                Orte. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
-                Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich
-                auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
+                Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO
+                und § 25 Abs. 1 TDDDG. Sie können Ihre Einwilligung jederzeit verweigern, indem Sie die
+                Karte nicht laden.
               </p>
               <p>
                 Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google:{" "}

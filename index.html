@@ -12,7 +12,6 @@
     <meta name="author" content="Markus Fischer" />
     <meta name="publisher" content="M. Fischer Maschinenbetrieb" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="https://www.mfischer-bauunternehmen.de/" />
 
     <!-- Local SEO / Geo -->
     <meta name="geo.region" content="DE-BY" />
@@ -36,10 +35,9 @@
     <meta name="twitter:description" content="Tiefbau, Erdarbeiten, Abbruch, Außenanlagen und Baumfällungen aus Rott am Inn. Persönlich auf jeder Baustelle." />
     <meta name="twitter:image" content="https://www.mfischer-bauunternehmen.de/images/bild31.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
+    <!-- LCP preload: hero video poster -->
+    <link rel="preload" as="image" href="/images/prozess-hero.webp" fetchpriority="high" />
+    <!-- Fonts: lokal eingebunden via @fontsource-variable (kein Datentransfer zu Google) -->
 
     <!-- LocalBusiness Structured Data (LLM + Search Engine friendly) -->
     <script type="application/ld+json">
@@ -110,9 +108,9 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "bestRating": "5",
-        "ratingCount": "20"
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "ratingCount": 20
       },
       "knowsLanguage": "de"
     }

@@ -6,21 +6,21 @@ import { gsap } from "../../../utils/gsap";
 const projects = [
   {
     id: "01",
-    image: "/images/bild6.png",
+    image: "/images/bild6.webp",
     title: "Hausanschluss & Drainage",
     category: "Tiefbau · Rott am Inn",
     year: "2023",
   },
   {
     id: "02",
-    image: "/images/bild7.png",
+    image: "/images/bild7.webp",
     title: "Rückbau Altgebäude",
     category: "Abbruch · Inntal und Chiemgau",
     year: "2024",
   },
   {
     id: "03",
-    image: "/images/bild8.png",
+    image: "/images/bild8.webp",
     title: "Zufahrt & Gartengestaltung",
     category: "Außenanlagen · Inntal und Chiemgau",
     year: "2024",
@@ -197,6 +197,7 @@ export function Gallery9() {
                   <img
                     src={p.image}
                     alt={p.title}
+                    loading="lazy"
                     className="g9-card-img absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
                     style={{ willChange: "transform" }}
                   />
