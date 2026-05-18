@@ -174,6 +174,15 @@ export function Gallery9() {
               </span>
             </span>
           </h2>
+
+          {/* Mobile-only: Projektübersicht direkt unter Heading */}
+          <a
+            href="/projekte"
+            className="g9-cta mt-5 inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B] md:hidden"
+          >
+            Projektübersicht
+            <span className="text-[#8B1A1A]">→</span>
+          </a>
         </div>
 
         {/* Cards */}
@@ -243,7 +252,7 @@ export function Gallery9() {
           </a>
           <a
             href="/projekte"
-            className="g9-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B]"
+            className="g9-cta hidden md:inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B]"
           >
             Projektübersicht
             <span className="text-[#8B1A1A]">→</span>

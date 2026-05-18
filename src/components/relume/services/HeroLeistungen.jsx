@@ -158,7 +158,7 @@ export function HeroLeistungen() {
         ref={imageRef}
         src="/images/bild9.webp"
         alt="M. Fischer Maschinenbetrieb – Leistungen"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover [object-position:70%_center] md:[object-position:center_center]"
         style={{ willChange: "transform, filter" }}
       />
 
@@ -182,13 +182,13 @@ export function HeroLeistungen() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col justify-end px-[5%] pb-20 md:pb-28">
+      <div className="relative z-10 h-full flex flex-col justify-end px-[5%] pb-36 md:pb-28">
         <div className="max-w-[1400px]">
           <p
             ref={eyebrowRef}
-            className="mb-6 font-body text-sm font-semibold uppercase tracking-[0.4em] text-white/85 flex items-center gap-4"
+            className="mb-4 md:mb-6 font-body text-[9px] md:text-sm font-semibold uppercase tracking-[0.14em] md:tracking-[0.4em] text-white/85 flex items-center gap-2 md:gap-4 whitespace-nowrap"
           >
-            <span className="h-px w-12 bg-white/65" />
+            <span className="h-px w-5 md:w-12 bg-white/65 shrink-0" />
             M. Fischer Bauunternehmen
           </p>
 

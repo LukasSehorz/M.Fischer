@@ -222,17 +222,17 @@ export function Layout239() {
         <div className="mb-12 md:mb-16">
           <p
             ref={eyebrowRef}
-            className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]"
+            className="mb-3 font-body text-[9px] md:text-sm font-semibold uppercase tracking-[0.14em] md:tracking-[0.25em] text-[#8B1A1A] whitespace-nowrap"
             style={{ willChange: "transform, opacity" }}
           >
             Meine Leistungen auf einen Blick
           </p>
           <h2
             ref={headingRef}
-            className="font-heading font-bold leading-tight tracking-tight text-[#28282B] whitespace-nowrap"
+            className="font-heading font-bold leading-tight tracking-tight text-[#28282B] md:whitespace-nowrap"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)", willChange: "transform, opacity" }}
           >
-            Fünf Leistungen. Ein Ansprechpartner.
+            Fünf Leistungen.<br className="md:hidden" /> Ein Ansprechpartner.
           </h2>
         </div>
 

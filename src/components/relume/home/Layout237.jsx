@@ -124,7 +124,7 @@ export function Layout237() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FDFCF8" }}>
+    <section ref={sectionRef} className="px-[5%] pt-16 pb-8 md:py-24 lg:py-28" style={{ backgroundColor: "#FDFCF8" }}>
       <div className="container">
 
         {/* Heading */}
@@ -209,7 +209,7 @@ export function Layout237() {
         </div>
 
         {/* CTAs */}
-        <div className="l237-cta-row mt-12 flex flex-wrap items-center gap-6 md:mt-16">
+        <div className="l237-cta-row -mt-6 flex flex-wrap items-center gap-3 md:mt-16 md:gap-6">
           <a
             href="/leistungen"
             className="l237-cta inline-flex items-center bg-[#8B1A1A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"

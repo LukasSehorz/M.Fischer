@@ -130,10 +130,10 @@ export function Header78() {
       <div className="relative z-10 flex h-full flex-col justify-center px-[6%] pt-20 pb-12 md:max-w-[58%] lg:max-w-[52%]">
 
         {/* Eyebrow */}
-        <div className="mb-12 flex items-center gap-4">
-          <span className="hero-eyebrow-line h-px w-10 flex-shrink-0" style={{ background: "#8B1A1A" }} />
+        <div className="mb-3 md:mb-12 flex items-center gap-3 md:gap-4">
+          <span className="hero-eyebrow-line h-px w-6 md:w-10 flex-shrink-0" style={{ background: "#8B1A1A" }} />
           <div style={{ overflow: "hidden" }}>
-            <p className="hero-eyebrow-inner font-body text-xs font-semibold uppercase tracking-[0.28em]" style={{ color: "#8B1A1A" }}>
+            <p className="hero-eyebrow-inner font-body font-semibold uppercase text-[9px] tracking-[0.18em] md:text-xs md:tracking-[0.28em]" style={{ color: "#8B1A1A" }}>
               Rott am Inn · Gegründet 2020
             </p>
           </div>

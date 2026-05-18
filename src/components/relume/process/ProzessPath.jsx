@@ -505,7 +505,7 @@ export function ProzessPath() {
         }}
       >
 
-        {/* Section label — fixed to section, not strip */}
+        {/* Section label */}
         <div
           ref={headingRef}
           style={{
@@ -650,7 +650,7 @@ export function ProzessPath() {
               zIndex: 2,
               willChange: "transform, opacity",
               ...(above
-                ? { bottom: `min(calc(${100 - nyVh + 3}vh), calc(100vh - 5.5rem - 280px))` }
+                ? { bottom: `min(calc(${100 - nyVh + 10}vh), calc(100vh - 6rem - 215px))` }
                 : { top:    `calc(${nyVh + 3}vh)` }),
             };
 
@@ -658,11 +658,14 @@ export function ProzessPath() {
               <div
                 key={i}
                 ref={(el) => (cardRefs.current[i] = el)}
+                className={above ? "prozess-above-card" : ""}
                 style={cardStyle}
               >
                 {above ? (
-                  <>
-                    <ul style={{ padding: 0, margin: 0, listStyle: "none", marginBottom: 14 }}>
+                  /* Desktop: Bullets oben → Icon unten (nahe Linie)
+                     Mobile:  flex-direction:column-reverse dreht die Reihenfolge um */
+                  <div className="prozess-card-above">
+                    <ul className="card-bullets" style={{ padding: 0, margin: 0, listStyle: "none", marginBottom: 14 }}>
                       {step.bullets.map((b, bi) => (
                         <li key={bi} className="card-bullet" style={{
                           display: "flex", alignItems: "flex-start", gap: 8,
@@ -704,7 +707,7 @@ export function ProzessPath() {
                         <Icon size={26} color="rgba(139,26,26,0.80)" />
                       </div>
                     </div>
-                  </>
+                  </div>
                 ) : (
                   <>
                     <div className="card-icon" style={{ display: "flex", justifyContent: "center", marginBottom: 14 }}>
@@ -733,7 +736,7 @@ export function ProzessPath() {
                     }}>
                       {step.title}
                     </h3>
-                    <ul style={{ padding: 0, margin: 0, listStyle: "none" }}>
+                    <ul className="card-bullets" style={{ padding: 0, margin: 0, listStyle: "none" }}>
                       {step.bullets.map((b, bi) => (
                         <li key={bi} className="card-bullet" style={{
                           display: "flex", alignItems: "flex-start", gap: 8,

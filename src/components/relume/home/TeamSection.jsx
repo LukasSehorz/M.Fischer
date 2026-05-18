@@ -98,10 +98,21 @@ export function TeamSection() {
   return (
     <div className="relative" style={{ backgroundColor: "#28282B" }} ref={sectionRef}>
 
-      <div className="relative h-screen w-full overflow-hidden flex">
+      {/* Mobile: Bild oben, Text unten — Desktop: side-by-side h-screen */}
+      <div className="relative w-full overflow-hidden flex flex-col md:flex-row md:h-screen">
 
-        {/* Links: Text */}
-        <div className="flex h-full w-1/2 flex-col justify-center px-12 md:px-16 lg:px-20">
+        {/* Bild — mobile: full width, feste Höhe — desktop: halbe Breite, volle Höhe */}
+        <div className="team-img-wrap h-[100vw] max-h-[480px] w-full bg-[#f0ede8] md:order-2 md:h-full md:max-h-none md:w-1/2">
+          <img
+            src={michael.image}
+            alt={michael.name}
+            loading="lazy"
+            className="h-full w-full object-cover [object-position:65%_0%] md:[object-position:65%_15%]"
+          />
+        </div>
+
+        {/* Text */}
+        <div className="flex w-full flex-col justify-center px-8 py-10 md:order-1 md:h-full md:w-1/2 md:px-16 lg:px-20">
           <p className="team-eyebrow mb-5 font-body text-xs font-semibold uppercase tracking-[0.32em]" style={{ color: "#8B1A1A" }}>
             {michael.num} · Über mich
           </p>
@@ -115,20 +126,20 @@ export function TeamSection() {
             </h2>
           </div>
 
-          <p className="team-subtitle mb-8 font-body text-sm uppercase tracking-[0.18em] text-white/50">
+          <p className="team-subtitle mb-6 font-body text-sm uppercase tracking-[0.18em] text-white/50">
             {michael.title}
           </p>
 
-          <div className="team-divider mb-8 h-px w-12" style={{ backgroundColor: "#8B1A1A" }} />
+          <div className="team-divider mb-6 h-px w-12" style={{ backgroundColor: "#8B1A1A" }} />
 
-          <p className="team-bio mb-10 max-w-md font-body text-sm leading-relaxed text-white/60 md:text-base">
+          <p className="team-bio mb-8 max-w-md font-body text-sm leading-relaxed text-white/60 md:text-base">
             {michael.bio}
           </p>
 
-          <div className="mb-10 space-y-4">
+          <div className="mb-8 space-y-4">
             {michael.facts.map((f) => (
               <div key={f.label} className="team-fact flex items-baseline gap-4">
-                <span className="w-40 shrink-0 font-body text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#8B1A1A" }}>
+                <span className="w-32 shrink-0 font-body text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#8B1A1A" }}>
                   {f.label}
                 </span>
                 <span className="font-body text-sm text-white/80">{f.value}</span>
@@ -142,17 +153,6 @@ export function TeamSection() {
           >
             {michael.email} <span style={{ color: "#8B1A1A" }}>→</span>
           </a>
-        </div>
-
-        {/* Rechts: Bild */}
-        <div className="team-img-wrap h-full w-1/2 bg-[#f0ede8]">
-          <img
-            src={michael.image}
-            alt={michael.name}
-            loading="lazy"
-            className="h-full w-full object-cover"
-            style={{ objectPosition: "65% 15%" }}
-          />
         </div>
 
       </div>

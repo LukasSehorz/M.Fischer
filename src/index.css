@@ -8,6 +8,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -40,4 +41,51 @@
   .font-body {
     font-family: "DM Sans", sans-serif;
   }
+
+  /* Prozess step cards (above:true): Desktop = bullets oben, Mobile = icon oben */
+  .prozess-card-above {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  @media (min-width: 768px) {
+    .prozess-card-above {
+      display: contents;
+    }
+  }
+
+  /* Mobile: push above-cards high enough that bullets clear the path line */
+  @media (max-width: 767px) {
+    .prozess-above-card {
+      bottom: 60vh !important;
+    }
+
+    /* Smaller text + icon so the card fits between navbar and path line */
+    .card-title {
+      font-size: 1.05rem !important;
+      margin-bottom: 4px !important;
+    }
+    .card-num {
+      font-size: 0.62rem !important;
+      margin-bottom: 8px !important;
+    }
+    .card-bullet {
+      font-size: 0.75rem !important;
+      margin-bottom: 3px !important;
+    }
+    .card-bullets {
+      margin-bottom: 8px !important;
+    }
+    .card-icon {
+      margin-bottom: 8px !important;
+    }
+    .card-icon > div {
+      width: 48px !important;
+      height: 48px !important;
+    }
+    .card-icon svg {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
 }
