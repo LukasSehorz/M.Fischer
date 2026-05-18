@@ -79,13 +79,20 @@ export function Header78() {
     };
   }, []);
 
-  // Start video immediately — plays silently behind the intro screen.
-  // On iOS, video.play() must be called as early as possible (muted videos
-  // are allowed, but delayed calls from setTimeout-fired events are blocked).
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    video.play().catch(() => {});
+
+    const tryPlay = () => video.play().catch(() => {});
+
+    // iOS: play only works reliably once the browser has loaded metadata
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener("loadeddata", tryPlay, { once: true });
+    }
+
+    return () => video.removeEventListener("loadeddata", tryPlay);
   }, []);
 
   return (
