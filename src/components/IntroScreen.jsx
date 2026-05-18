@@ -31,7 +31,7 @@ export default function IntroScreen({ onComplete }) {
 
         {/* Bagger – immer sichtbar, wird durch den wachsenden Text nach links geschoben */}
         <motion.img
-          src="/images/logo-bagger.png"
+          src="/images/logo-bagger.webp"
           alt="M. Fischer Bagger"
           style={{ display: "block", height: "clamp(80px, 12vw, 160px)", width: "auto", flexShrink: 0 }}
           initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function IntroScreen({ onComplete }) {
         >
           <div style={{ overflow: "hidden" }}>
             <motion.img
-              src="/images/logo-text.png"
+              src="/images/logo-text.webp"
               alt="M. Fischer Bauunternehmen"
               style={{ display: "block", height: "clamp(44px, 6.5vw, 88px)", width: "auto" }}
               initial={{ y: "110%" }}

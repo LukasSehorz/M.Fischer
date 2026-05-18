@@ -45,7 +45,7 @@ export function ProzessHero() {
       <img
         src="/images/bild23.webp"
         alt="M. Fischer Maschinenbetrieb – Prozess"
-        fetchpriority="high"
+        fetchPriority="high"
         className="prozess-hero-bg absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform" }}
       />

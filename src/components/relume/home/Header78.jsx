@@ -109,7 +109,7 @@ export function Header78() {
         muted
         playsInline
         preload="auto"
-        fetchpriority="high"
+        fetchPriority="high"
         poster="/images/prozess-hero.webp"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />

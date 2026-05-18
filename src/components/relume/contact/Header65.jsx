@@ -8,7 +8,7 @@ export function Header65() {
       <img
         src="/images/bild32.webp"
         alt="Markus Fischer"
-        fetchpriority="high"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-contain"
       />
     </section>
