@@ -151,7 +151,6 @@ export function Header78() {
         autoPlay
         playsInline
         preload="auto"
-        poster="/images/prozess-hero.webp"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
