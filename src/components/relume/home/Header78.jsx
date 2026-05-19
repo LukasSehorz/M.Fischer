@@ -91,26 +91,46 @@ export function Header78() {
     video.setAttribute("webkit-playsinline", "");
 
     const tryPlay = () => {
+      if (video.readyState === 0) {
+        video.load();
+      }
       video.play().catch(() => {});
+    };
+
+    const revealVideoFrame = () => {
+      video.removeAttribute("poster");
     };
 
     // iOS: play only works reliably once the browser has loaded metadata
     if (video.readyState >= 2) {
+      revealVideoFrame();
       tryPlay();
     } else {
+      video.addEventListener("loadedmetadata", revealVideoFrame, { once: true });
       video.addEventListener("loadedmetadata", tryPlay, { once: true });
       video.addEventListener("loadeddata", tryPlay, { once: true });
       video.addEventListener("canplay", tryPlay, { once: true });
     }
 
+    const retryTimer = window.setInterval(() => {
+      if (!video.paused || document.hidden) return;
+      tryPlay();
+    }, 1200);
+
     window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+    window.addEventListener("pageshow", tryPlay);
+    window.addEventListener("focus", tryPlay);
     document.addEventListener("visibilitychange", tryPlay);
 
     return () => {
+      window.clearInterval(retryTimer);
+      video.removeEventListener("loadedmetadata", revealVideoFrame);
       video.removeEventListener("loadedmetadata", tryPlay);
       video.removeEventListener("loadeddata", tryPlay);
       video.removeEventListener("canplay", tryPlay);
       window.removeEventListener("touchstart", tryPlay);
+      window.removeEventListener("pageshow", tryPlay);
+      window.removeEventListener("focus", tryPlay);
       document.removeEventListener("visibilitychange", tryPlay);
     };
   }, []);
