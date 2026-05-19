@@ -83,16 +83,36 @@ export function Header78() {
     const video = videoRef.current;
     if (!video) return;
 
-    const tryPlay = () => video.play().catch(() => {});
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+
+    const tryPlay = () => {
+      video.play().catch(() => {});
+    };
 
     // iOS: play only works reliably once the browser has loaded metadata
     if (video.readyState >= 2) {
       tryPlay();
     } else {
+      video.addEventListener("loadedmetadata", tryPlay, { once: true });
       video.addEventListener("loadeddata", tryPlay, { once: true });
+      video.addEventListener("canplay", tryPlay, { once: true });
     }
 
-    return () => video.removeEventListener("loadeddata", tryPlay);
+    window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+    document.addEventListener("visibilitychange", tryPlay);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", tryPlay);
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+      window.removeEventListener("touchstart", tryPlay);
+      document.removeEventListener("visibilitychange", tryPlay);
+    };
   }, []);
 
   return (
@@ -111,6 +131,7 @@ export function Header78() {
         autoPlay
         playsInline
         preload="auto"
+        poster="/images/prozess-hero.webp"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
