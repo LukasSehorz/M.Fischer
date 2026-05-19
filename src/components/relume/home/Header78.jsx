@@ -89,6 +89,7 @@ export function Header78() {
     video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
+    video.setAttribute("preload", "auto");
 
     const tryPlay = () => {
       if (video.readyState === 0) {
@@ -117,7 +118,12 @@ export function Header78() {
       tryPlay();
     }, 1200);
 
-    window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+    window.addEventListener("click", tryPlay, { passive: true });
+    window.addEventListener("pointerdown", tryPlay, { passive: true });
+    window.addEventListener("scroll", tryPlay, { passive: true });
+    window.addEventListener("touchend", tryPlay, { passive: true });
+    window.addEventListener("touchmove", tryPlay, { passive: true });
+    window.addEventListener("touchstart", tryPlay, { passive: true });
     window.addEventListener("pageshow", tryPlay);
     window.addEventListener("focus", tryPlay);
     document.addEventListener("visibilitychange", tryPlay);
@@ -128,6 +134,11 @@ export function Header78() {
       video.removeEventListener("loadedmetadata", tryPlay);
       video.removeEventListener("loadeddata", tryPlay);
       video.removeEventListener("canplay", tryPlay);
+      window.removeEventListener("click", tryPlay);
+      window.removeEventListener("pointerdown", tryPlay);
+      window.removeEventListener("scroll", tryPlay);
+      window.removeEventListener("touchend", tryPlay);
+      window.removeEventListener("touchmove", tryPlay);
       window.removeEventListener("touchstart", tryPlay);
       window.removeEventListener("pageshow", tryPlay);
       window.removeEventListener("focus", tryPlay);
@@ -145,15 +156,17 @@ export function Header78() {
       {/* ── Video: Hintergrund ── */}
       <video
         ref={videoRef}
+        src="/videos/hero.mp4"
         className="hero-bg-img absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform" }}
         muted
         autoPlay
         playsInline
+        loop
         preload="auto"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
+        disablePictureInPicture
+        controls={false}
+      />
 
       {/* Sättigung / Helligkeit als eigenes Overlay statt CSS-filter auf Video (iOS-Fix) */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.12)", mixBlendMode: "multiply" }} />
