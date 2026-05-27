@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "../../../utils/gsap";
 
 const projects = [
@@ -176,13 +177,13 @@ export function Gallery9() {
           </h2>
 
           {/* Mobile-only: Projektübersicht direkt unter Heading */}
-          <a
-            href="/projekte"
+          <Link
+            to="/projekte"
             className="g9-cta mt-5 inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B] md:hidden"
           >
             Projektübersicht
             <span className="text-[#8B1A1A]">→</span>
-          </a>
+          </Link>
         </div>
 
         {/* Cards */}
@@ -244,19 +245,19 @@ export function Gallery9() {
 
         {/* CTAs */}
         <div className="g9-cta-row mt-12 flex flex-wrap items-center gap-6 md:mt-16">
-          <a
-            href="/projekte"
+          <Link
+            to="/projekte"
             className="g9-cta inline-flex items-center bg-[#8B1A1A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
           >
             Alle Projekte ansehen
-          </a>
-          <a
-            href="/projekte"
+          </Link>
+          <Link
+            to="/projekte"
             className="g9-cta hidden md:inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B]"
           >
             Projektübersicht
             <span className="text-[#8B1A1A]">→</span>
-          </a>
+          </Link>
         </div>
 
       </div>

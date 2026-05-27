@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "../../../utils/gsap";
 
 const features = [
@@ -210,19 +211,19 @@ export function Layout237() {
 
         {/* CTAs */}
         <div className="l237-cta-row -mt-6 flex flex-wrap items-center gap-3 md:mt-16 md:gap-6">
-          <a
-            href="/leistungen"
+          <Link
+            to="/leistungen"
             className="l237-cta inline-flex items-center bg-[#8B1A1A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
           >
             Leistungen entdecken
-          </a>
-          <a
-            href="/ueber-uns"
+          </Link>
+          <Link
+            to="/ueber-uns"
             className="l237-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B]"
           >
             Meine Geschichte
             <span className="text-[#8B1A1A]">→</span>
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 const services = [
@@ -213,6 +214,7 @@ export function Layout239() {
   return (
     <section
       ref={sectionRef}
+      id="leistungen"
       className="px-[5%] pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-36 lg:pb-28"
       style={{ backgroundColor: "#FDFCF8" }}
     >
@@ -332,20 +334,20 @@ export function Layout239() {
 
         {/* CTAs */}
         <div ref={ctaWrapRef} className="mt-10 flex flex-wrap items-center gap-6 md:mt-14">
-          <a
-            href="/kontakt"
+          <Link
+            to="/kontakt"
             className="inline-flex items-center gap-2 border border-[#8B1A1A]/30 px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#8B1A1A] transition-all duration-300 hover:bg-[#8B1A1A] hover:text-white hover:border-[#8B1A1A]"
           >
             Termin vereinbaren
             <span>→</span>
-          </a>
-          <a
-            href="/kontakt"
+          </Link>
+          <Link
+            to="/kontakt"
             className="inline-flex items-center gap-2 font-body text-sm font-semibold uppercase tracking-[0.12em] text-[#5A6478] transition-colors duration-200 hover:text-[#8B1A1A]"
           >
             Projekt anfragen
             <span className="text-[#8B1A1A]">→</span>
-          </a>
+          </Link>
         </div>
 
       </div>

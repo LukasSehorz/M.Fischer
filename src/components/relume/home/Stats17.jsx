@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "../../../utils/gsap";
 
 const stats = [
@@ -125,13 +126,13 @@ export function Stats17() {
               Seit 2020 in Rott am Inn – jede Zahl steht für ein abgeschlossenes Projekt und einen zufriedenen Kunden.
             </p>
             <div className="mt-8">
-              <a
-                href="/projekte"
+              <Link
+                to="/projekte"
                 className="group inline-flex items-center gap-3 border border-[#8B1A1A]/30 px-7 py-3 font-body text-sm font-semibold tracking-[0.14em] uppercase text-[#8B1A1A] transition-all duration-200 hover:bg-[#8B1A1A] hover:text-white hover:border-[#8B1A1A]"
               >
                 Projekte entdecken
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </a>
+              </Link>
             </div>
           </div>
 

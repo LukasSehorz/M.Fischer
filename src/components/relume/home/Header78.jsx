@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 export function Header78() {
@@ -242,13 +243,13 @@ export function Header78() {
 
         {/* CTAs — both get the fill-on-hover effect */}
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a
-            href="/kontakt"
+          <Link
+            to="/kontakt"
             className="hero-cta group inline-flex w-full items-center justify-center gap-3 border border-white/40 bg-transparent px-7 py-4 font-body text-sm font-semibold uppercase tracking-[0.14em] text-white/85 transition-all duration-300 hover:bg-white hover:border-white hover:text-[#8B1A1A] sm:w-auto sm:justify-start"
           >
             Projekt anfragen
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </a>
+          </Link>
           <a
             href="https://wa.me/491754322110"
             target="_blank"
