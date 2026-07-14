@@ -1,6 +1,13 @@
 "use client";
 
 import { Link } from "react-router-dom";
+import { CONSENT_EVENT } from "../../lib/consent";
+
+// Öffnet das Cookie-Banner erneut, damit die Einwilligung widerrufen/geändert
+// werden kann (Art. 7 Abs. 3 DSGVO).
+function openCookieSettings() {
+  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: "reset" }));
+}
 
 const navCols = [
   {
@@ -134,6 +141,13 @@ export function Footer() {
             <Link to="/datenschutz" className="font-body text-xs text-[#28282B]/35 transition-colors duration-200 hover:text-[#28282B]/70">
               Datenschutz
             </Link>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="font-body text-xs text-[#28282B]/35 transition-colors duration-200 hover:text-[#28282B]/70"
+            >
+              Cookie-Einstellungen
+            </button>
           </div>
         </div>
       </div>

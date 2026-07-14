@@ -17,7 +17,7 @@ export default function Page() {
           >
             Datenschutzerklärung
           </h1>
-          <p className="mb-12 font-body text-sm text-[#5A6478]">Stand: Mai 2026</p>
+          <p className="mb-12 font-body text-sm text-[#5A6478]">Stand: Juli 2026</p>
 
           <div className="space-y-10 font-body text-base leading-relaxed text-[#28282B]/75">
 
@@ -193,14 +193,72 @@ export default function Page() {
               </p>
             </div>
 
-            {/* 6. COOKIES */}
+            {/* 6. COOKIES & EINWILLIGUNG */}
             <div>
-              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">6. Cookies</h2>
+              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">6. Cookies und Einwilligung</h2>
+              <p className="mb-4">
+                Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden auf
+                Grundlage von § 25 Abs. 2 TDDDG gesetzt und erfordern keine gesonderte Einwilligung. Ihre
+                getroffene Cookie-Auswahl speichern wir hierzu lokal in Ihrem Browser (localStorage), damit das
+                Einwilligungsbanner bei weiteren Besuchen nicht erneut angezeigt werden muss.
+              </p>
+              <p className="mb-4">
+                Darüber hinaus setzen wir Cookies und vergleichbare Technologien für Analyse- und
+                Statistikzwecke (siehe Abschnitt „Google Tag Manager und Google Analytics") ein. Diese werden
+                ausschließlich nach Ihrer aktiven Einwilligung geladen (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a
+                DSGVO). Beim ersten Besuch der Website erhalten Sie hierzu einen Cookie-Hinweis, über den Sie
+                der Verwendung zustimmen oder sie ablehnen können.
+              </p>
               <p>
-                Diese Website verwendet keine Tracking- oder Analyse-Cookies. Es werden ausschließlich technisch
-                notwendige Cookies eingesetzt, die für den Betrieb der Website erforderlich sind. Diese Cookies
-                werden auf Grundlage von § 25 Abs. 2 TDDDG (technisch notwendige Cookies) gesetzt und erfordern
-                keine gesonderte Einwilligung.
+                Ihre Einwilligung ist freiwillig und kann jederzeit mit Wirkung für die Zukunft widerrufen
+                werden. Sie können Ihre Cookie-Einstellungen jederzeit über den Link „Cookie-Einstellungen"
+                im Footer der Website ändern oder widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten
+                Verarbeitung bleibt vom Widerruf unberührt.
+              </p>
+            </div>
+
+            {/* 6a. GOOGLE TAG MANAGER & GOOGLE ANALYTICS */}
+            <div>
+              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">
+                6a. Google Tag Manager und Google Analytics
+              </h2>
+              <p className="mb-4">
+                Diese Website nutzt den Google Tag Manager sowie den Webanalysedienst Google Analytics.
+                Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
+                („Google").
+              </p>
+              <p className="mb-4">
+                Der Google Tag Manager ist ein Werkzeug, mit dem wir Tracking- und Analysedienste (hier: Google
+                Analytics) einbinden und verwalten. Google Analytics ermöglicht eine Analyse des
+                Nutzungsverhaltens der Websitebesucher (z. B. aufgerufene Seiten, Verweildauer, ungefähre
+                Herkunft). Hierzu werden Cookies auf Ihrem Endgerät gespeichert bzw. es wird auf Ihrem Endgerät
+                gespeicherte Information ausgelesen. Die so erhobenen Informationen werden in der Regel an einen
+                Server von Google übertragen und dort gespeichert. Dabei kann es zu einer Übermittlung von Daten
+                in die USA kommen; für diese Übermittlung stützt sich Google auf die
+                EU-Standardvertragsklauseln (Art. 46 DSGVO).
+              </p>
+              <p className="mb-4">
+                Der Google Tag Manager und Google Analytics werden erst geladen, nachdem Sie über unseren
+                Cookie-Hinweis aktiv eingewilligt haben. Vor Ihrer Einwilligung findet keine Übertragung an
+                Google statt. Die Rechtsgrundlage der Verarbeitung ist Ihre Einwilligung gemäß Art. 6 Abs. 1
+                lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit über die
+                „Cookie-Einstellungen" im Footer mit Wirkung für die Zukunft widerrufbar.
+              </p>
+              <p className="mb-4">
+                Mit Google wurde ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO geschlossen.
+              </p>
+              <p>
+                Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von
+                Google:{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8B1A1A] hover:underline"
+                >
+                  https://policies.google.com/privacy
+                </a>
+                .
               </p>
             </div>
 
@@ -217,13 +275,14 @@ export default function Page() {
                 <li>Referrer URL</li>
                 <li>Hostname des zugreifenden Rechners</li>
                 <li>Uhrzeit der Serveranfrage</li>
-                <li>IP-Adresse (anonymisiert nach 7 Tagen)</li>
+                <li>IP-Adresse</li>
               </ul>
               <p className="mt-4">
                 Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Server-Log-Dateien
-                werden nach spätestens 30 Tagen automatisch gelöscht. Die Erfassung dieser Daten erfolgt auf
-                Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an
-                der technisch fehlerfreien Darstellung und der Optimierung seiner Website.
+                werden ausschließlich zu Zwecken der technischen Bereitstellung und Sicherheit verarbeitet und im Rahmen
+                der Systeme unseres Hosters für den technisch erforderlichen Zeitraum gespeichert. Die Erfassung dieser
+                Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes
+                Interesse an der technisch fehlerfreien Darstellung und der Sicherheit seiner Website.
               </p>
             </div>
 
