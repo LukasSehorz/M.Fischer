@@ -130,6 +130,14 @@ export default function Page() {
               </p>
             </div>
 
+            <div>
+              <h2 className="mb-3 font-heading text-lg font-bold text-[#28282B]">Hinweis zu KI-generierten Inhalten</h2>
+              <p>
+                Teile der Inhalte dieser Website (Texte und Bilder) wurden mit Unterstützung von künstlicher
+                Intelligenz erstellt und redaktionell geprüft.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>

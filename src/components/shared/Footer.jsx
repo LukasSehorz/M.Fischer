@@ -150,6 +150,11 @@ export function Footer() {
             </button>
           </div>
         </div>
+
+        {/* KI-Hinweis */}
+        <p className="mt-6 font-body text-xs text-[#28282B]/45">
+          Teile der Inhalte dieser Website wurden mit Unterstützung von KI erstellt.
+        </p>
       </div>
     </footer>
   );
