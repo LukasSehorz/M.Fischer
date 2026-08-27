@@ -40,7 +40,7 @@ const vorteile = [
   {
     num: "04",
     title: "Direkter Kontakt",
-    desc: "Seit 2020 Einmannbetrieb. Flache Hierarchien, direkte Kommunikation und schnelle Entscheidungen.",
+    desc: "Seit 2020 am Markt. Flache Hierarchien, direkte Kommunikation und schnelle Entscheidungen.",
   },
   {
     num: "05",

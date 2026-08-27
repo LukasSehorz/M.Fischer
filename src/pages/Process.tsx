@@ -5,9 +5,9 @@ export default function Process() {
   return (
     <>
       <Seo
-        title="Mein Prozess – Vom Erstgespräch bis zur Übergabe"
+        title="Unser Prozess – Vom Erstgespräch bis zur Übergabe"
         path="/prozess"
-        description="So arbeite ich: Kontaktaufnahme, Vor-Ort-Termin, Angebot, persönliche Ausführung und Abnahme. Ein Ansprechpartner für Ihr gesamtes Bauprojekt."
+        description="So arbeiten wir: Kontaktaufnahme, Vor-Ort-Termin, Angebot, persönliche Ausführung und Abnahme. Ein Ansprechpartner für Ihr gesamtes Bauprojekt."
       />
       <Page />
     </>

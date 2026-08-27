@@ -23,8 +23,8 @@ const navCols = [
   {
     heading: "Unternehmen",
     links: [
-      { label: "Über mich", to: "/ueber-uns" },
-      { label: "Mein Prozess", to: "/prozess" },
+      { label: "Über uns", to: "/ueber-uns" },
+      { label: "Unser Prozess", to: "/prozess" },
       { label: "Projekte", to: "/projekte" },
     ],
   },

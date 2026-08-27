@@ -8,27 +8,27 @@ import { gsap } from "../../../utils/gsap";
 const faqs = [
   {
     q: "Welche Leistungen bietet M. Fischer Maschinenbetrieb an?",
-    a: "Ich biete Tiefbau, Erdarbeiten, Baggerarbeiten, Abbruch, Außenanlagen und Baumfällungen an — fachgerecht und aus einer Hand. Als Einmannbetrieb arbeite ich persönlich auf jeder Baustelle.",
+    a: "Wir bieten Tiefbau, Erdarbeiten, Baggerarbeiten, Abbruch, Außenanlagen und Baumfällungen an — fachgerecht und aus einer Hand. Wir sind persönlich auf jeder Baustelle.",
   },
   {
     q: "Wie lange sind Sie schon im Geschäft?",
-    a: "Seit 2020. Seitdem habe ich mir im Inntal und Chiemgau einen soliden Ruf aufgebaut — Google 5/5 und MyHammer 4,8/5 sprechen für sich.",
+    a: "Seit 2020. Seitdem haben wir uns im Inntal und Chiemgau einen soliden Ruf aufgebaut — Google 5/5 und MyHammer 4,8/5 sprechen für sich.",
   },
   {
     q: "Welche Regionen betreuen Sie?",
-    a: "Mein Schwerpunkt liegt im Umkreis Inntal und Chiemgau. Ich bin jedoch auch für Projekte darüber hinaus offen — sprechen Sie mich einfach an.",
+    a: "Unser Schwerpunkt liegt im Umkreis Inntal und Chiemgau. Für Projekte darüber hinaus sind wir ebenfalls offen — sprechen Sie uns einfach an.",
   },
   {
     q: "Arbeiten Sie mit Subunternehmern?",
-    a: "Nein. Als Einmannbetrieb führe ich alle Arbeiten persönlich aus. Das garantiert direkte Kommunikation, höchste Qualität und keine Überraschungen bei der Ausführung.",
+    a: "Wo es sinnvoll ist, arbeiten wir mit qualifizierten Subunternehmern zusammen, die wir seit Jahren kennen. Planung, Koordination und Abnahme bleiben bei uns – Sie haben durchgehend einen Ansprechpartner.",
   },
   {
     q: "Können Sie auch Baumfällungen und Außenanlagen anlegen?",
-    a: "Ja. Neben Tiefbau und Abbruch biete ich auch die Gestaltung von Außenanlagen sowie fachgerechte Baumfällungen an. Sprechen Sie mich gerne mit Ihrem Wunschprojekt an.",
+    a: "Ja. Neben Tiefbau und Abbruch bieten wir auch die Gestaltung von Außenanlagen sowie fachgerechte Baumfällungen an. Sprechen Sie uns gerne mit Ihrem Wunschprojekt an.",
   },
   {
     q: "Wie nehme ich Kontakt auf?",
-    a: "Rufen Sie mich an unter 0175 / 4322110 oder schreiben Sie mir an m.fischer-mab@web.de. Ich bin in Ritzmehring 1, 83543 Rott am Inn ansässig und melde mich schnellstmöglich.",
+    a: "Rufen Sie uns an unter 0175 / 4322110 oder schreiben Sie uns an m.fischer-mab@web.de. Wir sind in Ritzmehring 1, 83543 Rott am Inn ansässig und melden uns schnellstmöglich.",
   },
 ];
 

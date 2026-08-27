@@ -27,7 +27,7 @@ export function Contact6() {
               Ihr Projekt
             </h2>
             <p className="font-body text-base text-[#28282B]/60">
-              Ich antworte innerhalb eines Arbeitstages
+              Wir antworten innerhalb eines Arbeitstages
             </p>
           </div>
           <div className="grid gap-4">
@@ -110,7 +110,7 @@ export function Contact6() {
             <textarea
               id="message"
               rows={6}
-              placeholder="Erzählen Sie mir von Ihrem Projekt"
+              placeholder="Erzählen Sie uns von Ihrem Projekt"
               className={inputCls + " resize-none"}
             />
           </div>

@@ -11,7 +11,7 @@ const HOUSE_PATH = "M6 20L24 6L42 20V42H30V30H18V42H6V20Z";
 const navLinks = [
   { label: "Leistungen", href: "/leistungen" },
   { label: "Projekte", href: "/projekte" },
-  { label: "Über mich", href: "/ueber-uns" },
+  { label: "Über uns", href: "/ueber-uns" },
   { label: "Prozess", href: "/prozess" },
   { label: "Kontakt", href: "/kontakt" },
 ];
@@ -158,12 +158,20 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Center: logo */}
+        {/* Center: logo
+            Desktop: gleiche Höhe (80px) wie bisher, aber horizontal gedehnt.
+            Die Breite wächst mit dem Viewport (min = bisherige 208px), damit auf
+            schmalen Desktops kein Konflikt mit den Navlinks entsteht.
+            Mobile bleibt unverändert: Breite automatisch, keine Dehnung. */}
         <Link to="/" className="flex items-end justify-center self-stretch">
           <img
             src="/images/bild31.webp"
             alt="M. Fischer Maschinenbetrieb"
-            style={{ height: 80, width: "auto", objectFit: "contain" }}
+            style={
+              isMobile
+                ? { height: 80, width: "auto", objectFit: "contain" }
+                : { height: 80, width: "clamp(208px, 17vw, 255px)", objectFit: "fill" }
+            }
           />
         </Link>
 

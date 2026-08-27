@@ -16,7 +16,7 @@ const machines = [
     name: "Anhänger",
     img: "/images/bild20.webp",
     tags: ["Transport", "Eigenregie"],
-    desc: "Alle Geräte werden selbst transportiert – kein Subunternehmer, keine Wartezeiten.",
+    desc: "Alle Geräte werden selbst transportiert – kurze Wege, kaum Wartezeiten.",
   },
   {
     num: "03",
@@ -130,7 +130,7 @@ export function Maschinenpark() {
             Mein Maschinenpark
           </h2>
           <p ref={subRef} className="max-w-xl font-body text-base text-white/50">
-            Alle Maschinen im Eigenbesitz – kein Subunternehmer, kein Zeitverlust. Was ich verspreche, führe ich selbst aus.
+            Alle Maschinen im Eigenbesitz – kein Zeitverlust. Was wir versprechen, führen wir selbst aus.
           </p>
         </div>
 

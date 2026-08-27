@@ -7,7 +7,7 @@ import { gsap } from "../../../utils/gsap";
 const stats = [
   { value: "57",  label: "Abgeschlossene Projekte",  num: 57,  suffix: "" },
   { value: "98%", label: "Pünktliche Fertigstellung", num: 98,  suffix: "%" },
-  { value: "100%", label: "Eigenleistung – kein Subunternehmer", num: 100, suffix: "%" },
+  { value: "100%", label: "Qualifizierte Ausführung", num: 100, suffix: "%" },
   { value: "5+",  label: "Jahre in der Region",       num: 5,   suffix: "+" },
 ];
 
@@ -117,7 +117,7 @@ export function Stats17() {
           {/* Left */}
           <div>
             <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.28em] text-[#8B1A1A] md:mb-4">
-              Meine Zahlen
+              Unsere Zahlen
             </p>
             <h2 className="mb-5 font-heading text-5xl font-bold leading-tight tracking-tight text-[#28282B] md:mb-6 md:text-7xl lg:text-8xl">
               Ergebnisse,<br />die für sich sprechen

@@ -9,35 +9,35 @@ const services = [
     image: "/images/bild9.webp",
     num: "01",
     title: "Tiefbau",
-    body: "Ich übernehme alle Tiefbauarbeiten – von Leitungsgräben und Hausanschlüssen bis zu Drainagen. Sauber ausgeführt, termingerecht abgeschlossen.",
+    body: "Wir übernehmen alle Tiefbauarbeiten – von Leitungsgräben und Hausanschlüssen bis zu Drainagen. Sauber ausgeführt, zuverlässig abgeschlossen.",
     tags: ["Leitungsgräben", "Hausanschlüsse", "Drainage"],
   },
   {
     image: "/images/bild7.webp",
     num: "02",
     title: "Abbruch",
-    body: "Ich führe Abbrüche aller Art durch – von einzelnen Bauteilen bis zum kompletten Gebäuderückbau. Inklusive fachgerechter Entsorgung.",
+    body: "Wir führen Abbrüche aller Art durch – von einzelnen Bauteilen bis zum kompletten Gebäuderückbau. Inklusive fachgerechter Entsorgung.",
     tags: ["Gebäudeabbruch", "Rückbau", "Entsorgung"],
   },
   {
     image: "/images/bild6.webp",
     num: "03",
     title: "Erdarbeiten & Baggerarbeiten",
-    body: "Mit meinem Bagger übernehme ich Aushub, Planiererarbeiten und Bodenverdichtung. Präzise, effizient und für jede Grundstücksgröße geeignet.",
+    body: "Mit unseren Baggern übernehmen wir Aushub, Planiererarbeiten und Bodenverdichtung. Präzise, effizient und für jede Grundstücksgröße geeignet.",
     tags: ["Aushub", "Planieren", "Bodenverdichtung"],
   },
   {
     image: "/images/bild8.webp",
     num: "04",
     title: "Außenanlagen",
-    body: "Ich gestalte Zufahrten, Stellplätze, Wege und Gartenbereiche – von der Planung bis zur fertigen Umsetzung aus einer Hand.",
+    body: "Wir gestalten Zufahrten, Stellplätze, Wege und Gartenbereiche – von der Planung bis zur fertigen Umsetzung aus einer Hand.",
     tags: ["Zufahrten", "Pflasterung", "Gartengestaltung"],
   },
   {
     image: "/images/bild10.webp",
     num: "05",
     title: "Baumfällungen",
-    body: "Ich fälle Bäume jeder Größe sicher und fachgerecht – inklusive Stubbenrodung und Abtransport des Holzes auf Wunsch.",
+    body: "Wir fällen Bäume jeder Größe sicher und fachgerecht – inklusive Stubbenrodung und Abtransport des Holzes auf Wunsch.",
     tags: ["Baumfällung", "Stubbenrodung", "Abtransport"],
   },
 ];
@@ -227,7 +227,7 @@ export function Layout239() {
             className="mb-3 font-body text-[9px] md:text-sm font-semibold uppercase tracking-[0.14em] md:tracking-[0.25em] text-[#8B1A1A] whitespace-nowrap"
             style={{ willChange: "transform, opacity" }}
           >
-            Meine Leistungen auf einen Blick
+            Unsere Leistungen auf einen Blick
           </p>
           <h2
             ref={headingRef}

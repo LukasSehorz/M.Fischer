@@ -11,7 +11,7 @@ const milestones = [
     year: "2020",
     title: "Die Gründung",
     desc: "M. Fischer Maschinenbetrieb wird gegründet. Von Anfang an stehen persönliche Ausführung, Zuverlässigkeit und faire Preise im Mittelpunkt.",
-    detail: "Was in Rott am Inn als Einmannbetrieb begann, legte den Grundstein für einen soliden Ruf in der Region – für Tiefbau, Abbruch und Außenanlagen.",
+    detail: "Was in Rott am Inn im Kleinen begann, legte den Grundstein für einen soliden Ruf in der Region – für Tiefbau, Abbruch und Außenanlagen.",
   },
   {
     year: "2022",
@@ -68,7 +68,7 @@ export function Geschichte() {
       // Heading intro
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Meine Geschichte")
+        ? splitWords(headingRef.current, "Unsere Geschichte")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
       gsap.set(subRef.current, { y: 22, opacity: 0 });
@@ -166,10 +166,10 @@ export function Geschichte() {
               className="mb-5 font-heading font-bold leading-tight tracking-tight text-white"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
             >
-              Meine Geschichte
+              Unsere Geschichte
             </h2>
             <p ref={subRef} className="font-body text-base leading-relaxed text-white/50">
-              Einmannbetrieb seit 2020.<br />Ein Anspruch: Persönlich. Flexibel. Zuverlässig.
+              Im Inntal und Chiemgau seit 2020.<br />Ein Anspruch: Persönlich. Flexibel. Zuverlässig.
             </p>
           </div>
         </div>

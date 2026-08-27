@@ -19,13 +19,6 @@ const projects = [
     category: "Abbruch · Inntal und Chiemgau",
     year: "2024",
   },
-  {
-    id: "03",
-    image: "/images/bild8.webp",
-    title: "Zufahrt & Gartengestaltung",
-    category: "Außenanlagen · Inntal und Chiemgau",
-    year: "2024",
-  },
 ];
 
 export function Gallery9() {

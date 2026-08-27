@@ -237,7 +237,7 @@ export function Header78() {
 
         {/* Body */}
         <p className="hero-body mb-16 max-w-[440px] font-body text-base leading-relaxed text-white/70 md:text-lg">
-          Kein Subunternehmer – Markus Fischer steht persönlich auf jeder Baustelle.
+          Qualifizierte Subunternehmer – wir stehen persönlich auf jeder Baustelle.
           Tiefbau, Abbruch, Erdarbeiten und Außenanlagen im Inntal und Chiemgau.
         </p>
 

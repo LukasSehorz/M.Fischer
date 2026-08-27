@@ -10,7 +10,7 @@ const michael = {
   role: "Baumaschinenmeister",
   image: "/images/bild32.webp",
   email: "m.fischer-mab@web.de",
-  bio: "Ich habe meinen Maschinenbetrieb 2020 in Rott am Inn gegründet. Als Baumaschinenmeister führe ich jeden Auftrag persönlich aus – von der ersten Besprechung bis zur Abnahme. Kein Subunternehmer, kein Umweg.",
+  bio: "Unseren Maschinenbetrieb haben wir 2020 in Rott am Inn gegründet. Mit Baumaschinenmeister-Qualifikation begleiten wir jeden Auftrag persönlich – von der ersten Besprechung bis zur Abnahme. Wo es sinnvoll ist, mit qualifizierten Subunternehmern, aber ohne Umwege.",
   facts: [
     { label: "Gründung", value: "2020" },
     { label: "Spezialisierung", value: "Tiefbau, Abbruch & Außenanlagen" },
@@ -114,7 +114,7 @@ export function TeamSection() {
         {/* Text */}
         <div className="flex w-full flex-col justify-center px-8 py-10 md:order-1 md:h-full md:w-1/2 md:px-16 lg:px-20">
           <p className="team-eyebrow mb-5 font-body text-xs font-semibold uppercase tracking-[0.32em]" style={{ color: "#8B1A1A" }}>
-            {michael.num} · Über mich
+            {michael.num} · Über uns
           </p>
 
           <div style={{ overflow: "hidden", marginBottom: "0.5rem" }}>

@@ -6,7 +6,7 @@ import { gsap } from "../../../utils/gsap";
 const photos = [
   {
     src: "/images/bild15.webp",
-    caption: "Ich persönlich im Einsatz – Erdarbeiten mit dem Minibagger direkt am Wohnhaus.",
+    caption: "Persönlich im Einsatz – Erdarbeiten mit dem Minibagger direkt am Wohnhaus.",
     span: "col-span-2 row-span-2",
   },
   {

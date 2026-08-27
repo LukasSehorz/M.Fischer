@@ -57,7 +57,7 @@ export function Testimonial6() {
       // Heading
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Was meine Kunden sagen")
+        ? splitWords(headingRef.current, "Was unsere Kunden sagen")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
 
@@ -134,7 +134,7 @@ export function Testimonial6() {
             className="font-heading font-bold leading-tight tracking-tight text-white"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Was meine Kunden sagen
+            Was unsere Kunden sagen
           </h2>
         </div>
 

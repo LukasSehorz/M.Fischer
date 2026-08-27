@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Seo
         path="/"
-        description="M. Fischer Bauunternehmen aus Rott am Inn – Tiefbau, Erdarbeiten, Abbruch, Außenanlagen und Baumfällungen im Inntal und Chiemgau. Persönlich auf jeder Baustelle, ohne Subunternehmer."
+        description="M. Fischer Bauunternehmen aus Rott am Inn – Tiefbau, Erdarbeiten, Abbruch, Außenanlagen und Baumfällungen im Inntal und Chiemgau. Persönlich auf jeder Baustelle, mit qualifizierten Subunternehmern."
       />
       <Page />
     </>

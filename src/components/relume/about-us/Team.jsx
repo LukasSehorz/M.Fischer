@@ -100,7 +100,7 @@ export function Team() {
             Unser Team
           </h2>
           <p ref={subRef} className="mt-4 max-w-xl font-body text-base text-[#28282B]/60">
-            Einmannbetrieb – der Inhaber arbeitet persönlich auf jeder Baustelle.
+            Wir arbeiten persönlich auf jeder Baustelle.
           </p>
         </div>
 

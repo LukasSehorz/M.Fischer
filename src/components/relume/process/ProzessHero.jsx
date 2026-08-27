@@ -63,7 +63,7 @@ export function ProzessHero() {
           <span className="prozess-hero-line h-px w-10 flex-shrink-0 bg-[#8B1A1A]" />
           <div style={{ overflow: "hidden" }}>
             <p className="prozess-hero-eyebrow font-body text-xs font-semibold uppercase tracking-[0.25em] text-white/50">
-              Mein Weg · Von der Anfrage bis zur Übergabe
+              Unser Weg · Von der Anfrage bis zur Übergabe
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export function ProzessHero() {
           </span>
           <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
             <span className="block" style={{ whiteSpace: "nowrap" }}>
-              Mein <span style={{ color: "#8B1A1A" }}>Prozess.</span>
+              Unser <span style={{ color: "#8B1A1A" }}>Prozess.</span>
             </span>
           </span>
         </h1>

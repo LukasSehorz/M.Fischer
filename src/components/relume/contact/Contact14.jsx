@@ -22,10 +22,10 @@ export function Contact14() {
               className="mb-5 font-heading font-bold leading-tight tracking-tight text-[#28282B]"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
             >
-              Sprechen Sie mit mir.
+              Sprechen Sie mit uns.
             </h2>
             <p className="font-body text-base leading-relaxed text-[#28282B]/60 md:text-lg">
-              Ich bin Ihr direkter Ansprechpartner für alle Fragen rund um Ihr Vorhaben –
+              Wir sind Ihr direkter Ansprechpartner für alle Fragen rund um Ihr Vorhaben –
               von der ersten Besichtigung bis zur fertigen Baustelle.
             </p>
           </div>

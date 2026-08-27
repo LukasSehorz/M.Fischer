@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 const points = [
-  "Der Inhaber arbeitet persönlich auf jeder Baustelle",
+  "Persönliche Betreuung auf jeder Baustelle",
   "Moderner Maschinenpark für Tiefbau, Abbruch und Erdarbeiten",
   "Direkte Kommunikation – kein Vermittler, keine Überraschungen",
 ];
@@ -95,7 +95,7 @@ export function Layout16() {
       // Heading: word-by-word lift from below
       let headingWords = [];
       if (headingRef.current) {
-        headingWords = splitWords(headingRef.current, "Kompetenz und Termintreue – garantiert.");
+        headingWords = splitWords(headingRef.current, "Kompetenz und Termintreue.");
         gsap.set(headingWords, { yPercent: 110 });
       }
 
@@ -183,16 +183,16 @@ export function Layout16() {
               ref={headingRef}
               className="mb-5 font-heading text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl"
             >
-              Kompetenz und Termintreue – garantiert.
+              Kompetenz und Termintreue.
             </h2>
             <p
               ref={paraRef}
               data-text="Durch geschultes Personal, neueste Technik und einen umfangreichen Maschinenpark bieten wir Ihnen ein Know-how, das Kompetenz und Terminsicherheit garantiert. Hoher Qualitätsstandard der verarbeiteten Materialien und erfahrene Fachkräfte bürgen für zuverlässige Ausführung."
               className="mb-6 font-body text-base leading-relaxed text-white/90 md:text-lg"
             >
-              Als Einmannbetrieb arbeite ich persönlich auf jeder Baustelle.
+              Wir arbeiten persönlich auf jeder Baustelle.
               Mit modernem Maschinenpark und jahrelanger Erfahrung in Tiefbau,
-              Abbruch und Außenanlagen biete ich Qualität und Termintreue,
+              Abbruch und Außenanlagen bieten wir Qualität und Verlässlichkeit,
               die Sie direkt erleben – nicht nur versprochen bekommen.
             </p>
             <ul ref={listRef} className="mb-8 space-y-4">

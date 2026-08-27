@@ -151,8 +151,8 @@ export function ProzessCTA() {
         </h2>
 
         <p className="cta-sub max-w-[460px] font-body text-base leading-relaxed text-white/55 md:text-lg mb-12">
-          Egal ob Tiefbau, Erdarbeiten, Abbruch oder Außenanlagen – ich komme
-          kostenlos zu Ihnen vor Ort, schaue mir das Projekt an und gebe Ihnen
+          Egal ob Tiefbau, Erdarbeiten, Abbruch oder Außenanlagen – wir kommen
+          kostenlos zu Ihnen vor Ort, schauen uns das Projekt an und geben Ihnen
           ein verbindliches Angebot. Ohne Umwege.
         </p>
 

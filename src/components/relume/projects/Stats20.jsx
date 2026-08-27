@@ -5,7 +5,7 @@ import { gsap } from "../../../utils/gsap";
 
 const stats = [
   { value: 57,  suffix: "",  label: "Abgeschlossene\nProjekte" },
-  { value: 100, suffix: "%", label: "Eigenleistung –\nkein Subunternehmer" },
+  { value: 100, suffix: "%", label: "Qualifizierte\nAusführung" },
   { value: 5,   suffix: "+", label: "Jahre\nin der Region" },
   { value: 98,  suffix: "%", label: "Pünktliche\nFertigstellung" },
 ];

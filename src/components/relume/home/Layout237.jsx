@@ -7,17 +7,17 @@ import { gsap } from "../../../utils/gsap";
 const features = [
   {
     title: "Direkt & Unkompliziert",
-    body: "Bei mir gibt es keine langen Entscheidungswege. Ich bin selbst auf der Baustelle – vom ersten Gespräch bis zum letzten Spatenstich.",
+    body: "Bei uns gibt es keine langen Entscheidungswege. Wir sind selbst auf der Baustelle – vom ersten Gespräch bis zum letzten Spatenstich.",
     image: "/images/bild2.webp",
   },
   {
     title: "Qualität ohne Kompromisse",
-    body: "Jede Baustelle führe ich mit dem gleichen Anspruch aus: sauber, termingerecht und zum vereinbarten Preis. Keine Überraschungen, keine Nachforderungen.",
+    body: "Jede Baustelle führen wir mit dem gleichen Anspruch aus: sauber, sorgfältig und zum vereinbarten Preis. Falls sich vor Ort etwas ändert, sprechen wir es offen mit Ihnen ab – bevor wir weitermachen.",
     image: "/images/bild3.webp",
   },
   {
     title: "Verwurzelt im Inntal und Chiemgau",
-    body: "Seit 2020 führe ich Projekte im Inntal und Chiemgau aus. Kurze Wege, lokale Kenntnisse – ich kenne die Region.",
+    body: "Seit 2020 führen wir Projekte im Inntal und Chiemgau aus. Kurze Wege, lokale Kenntnisse – wir kennen die Region.",
     image: "/images/bild4.webp",
   },
 ];
@@ -131,19 +131,19 @@ export function Layout237() {
         {/* Heading */}
         <div className="l237-heading-area mb-14 max-w-2xl md:mb-18">
           <p className="l237-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#8B1A1A]">
-            Meine Philosophie
+            Unsere Philosophie
           </p>
           <h2
             className="font-heading font-bold leading-[1.05] tracking-tight text-[#28282B]"
             style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.5rem)" }}
           >
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
-              <span className="l237-heading-inner block">Wie ich denke.</span>
+              <span className="l237-heading-inner block">Wie wir denken.</span>
             </span>
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
               <span className="l237-heading-inner block">
                 <em className="font-serif font-light not-italic text-[#5A6478]">
-                  Wie ich arbeite.
+                  Wie wir arbeiten.
                 </em>
               </span>
             </span>
@@ -221,7 +221,7 @@ export function Layout237() {
             to="/ueber-uns"
             className="l237-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#28282B]"
           >
-            Meine Geschichte
+            Unsere Geschichte
             <span className="text-[#8B1A1A]">→</span>
           </Link>
         </div>

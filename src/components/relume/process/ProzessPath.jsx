@@ -12,7 +12,7 @@ const STEPS = [
     above: false,
     img: "/images/prozess/step1.png",
     bullets: [
-      "Anruf oder Nachricht – ich melde mich schnell",
+      "Anruf oder Nachricht – wir melden uns schnell",
       "Kurze Schilderung Ihres Vorhabens",
       "Terminvereinbarung für die Besichtigung",
     ],
@@ -48,7 +48,7 @@ const STEPS = [
     above: true,
     img: "/images/prozess/step4.png",
     bullets: [
-      "Ich führe jeden Auftrag selbst aus",
+      "Wir führen jeden Auftrag selbst aus",
       "Direkte Kommunikation während der Arbeit",
       "Sorgfältige und termingerechte Ausführung",
     ],
@@ -642,11 +642,16 @@ export function ProzessPath() {
             const above = step.above;
             const { Icon } = step;
 
+            // Above-Karten etwas breiter: so bleiben ihre Bullets einzeilig und
+            // alle Karten oberhalb der Linie sind exakt gleich hoch (215px).
+            // Dadurch hat jede von ihnen denselben Abstand zur Navbar.
+            const cardWidth = above ? 330 : 280;
+
             const cardStyle = {
               position: "absolute",
               left: `${xVw}vw`,
-              marginLeft: -140,
-              width: 280,
+              marginLeft: -cardWidth / 2,
+              width: cardWidth,
               zIndex: 2,
               willChange: "transform, opacity",
               ...(above

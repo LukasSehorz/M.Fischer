@@ -3,7 +3,7 @@
 import React from "react";
 
 const badges = [
-  "Einmannbetrieb",
+  "Baumaschinenmeister",
   "Festpreisgarantie",
   "Rott am Inn",
   "Tiefbau",

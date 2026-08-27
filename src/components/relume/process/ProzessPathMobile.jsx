@@ -10,7 +10,7 @@ const STEPS = [
     Icon: MessageSquare,
     img: "/images/prozess/step1.png",
     bullets: [
-      "Anruf oder Nachricht – ich melde mich schnell",
+      "Anruf oder Nachricht – wir melden uns schnell",
       "Kurze Schilderung Ihres Vorhabens",
       "Terminvereinbarung für die Besichtigung",
     ],
@@ -43,7 +43,7 @@ const STEPS = [
     Icon: Building2,
     img: "/images/prozess/step4.png",
     bullets: [
-      "Ich führe jeden Auftrag selbst aus",
+      "Wir führen jeden Auftrag selbst aus",
       "Direkte Kommunikation während der Arbeit",
       "Sorgfältige und termingerechte Ausführung",
     ],

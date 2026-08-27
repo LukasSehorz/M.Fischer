@@ -5,9 +5,9 @@ export default function AboutUs() {
   return (
     <>
       <Seo
-        title="Über mich – Markus Fischer, Baumaschinenmeister"
+        title="Über uns – M. Fischer Maschinenbetrieb"
         path="/ueber-uns"
-        description="Markus Fischer – Inhaber und Baumaschinenmeister. Seit 2020 führe ich jedes Projekt persönlich aus, ohne Subunternehmer. Standort: Rott am Inn."
+        description="M. Fischer Maschinenbetrieb – seit 2020 führen wir jedes Projekt persönlich aus, bei Bedarf mit qualifizierten Subunternehmern. Standort: Rott am Inn."
       />
       <Page />
     </>

@@ -198,7 +198,7 @@ export function HeroLeistungen() {
             style={{ fontSize: "clamp(3rem, 9vw, 9rem)" }}
           >
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
-              <span className="hl-inner block">Meine</span>
+              <span className="hl-inner block">Unsere</span>
             </span>
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
               <span className="hl-inner block" style={{ color: "#8B1A1A" }}>Leistungen</span>
@@ -211,8 +211,8 @@ export function HeroLeistungen() {
               className="md:col-span-6 lg:col-span-5 font-body text-base md:text-lg leading-relaxed text-white/75 max-w-xl"
             >
               Ein Ansprechpartner. Vom ersten Gespräch bis zur fertigen
-              Übergabe – ich führe alle Arbeiten persönlich aus, ohne
-              Subunternehmer und ohne Kompromisse bei der Qualität.
+              Übergabe – wir begleiten alle Arbeiten persönlich, mit
+              qualifizierten Subunternehmern und ohne Kompromisse bei der Qualität.
             </p>
 
             <div
