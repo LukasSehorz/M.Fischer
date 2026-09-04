@@ -6,6 +6,81 @@
     <link rel="icon" type="image/png" href="/images/logo-bagger.png" />
     <meta name="theme-color" content="#8B1A1A" />
 
+    <!--
+      Google Tag Manager — Container-ID im HTML, Ladevorgang trotzdem erst nach
+      Einwilligung.
+
+      Hier stoßen zwei Anforderungen aufeinander:
+
+       1. Die Google Search Console prüft die Inhaberschaft, indem sie das
+          ausgelieferte HTML der Startseite nach der Container-ID durchsucht.
+          Sie führt dabei kein JavaScript aus. Ein Snippet, das erst zur Laufzeit
+          per JS eingefügt wird (wie zuvor aus src/lib/consent.ts), steht deshalb
+          nie im Quelltext — die Prüfung scheitert mit „Container-ID nicht
+          gefunden".
+       2. Lädt der Container ungefragt, geht die IP jedes Besuchers an Google,
+          bevor er zustimmen konnte (TDDDG § 25 Abs. 1).
+
+      Deshalb steht das Snippet als Inline-Script im Dokument — die ID ist im
+      Quelltext auffindbar — aber es lädt gtm.js erst, wenn die in localStorage
+      gespeicherte Einwilligung vorliegt. Ohne Zustimmung geht kein einziger
+      Request an Google. Wird später über das Banner zugestimmt, startet das
+      Script über das Consent-Event nach.
+
+      Das noscript-iframe des Standard-Snippets fehlt bewusst: Es lädt ohne
+      JavaScript, und ohne JavaScript kann niemand einwilligen.
+
+      Einwilligungsspeicher ist allein src/lib/consent.ts (Key + Event unten
+      müssen zu CONSENT_KEY/CONSENT_EVENT dort passen).
+    -->
+    <script>
+      (function (w, d, s, l, i) {
+        var KEY = "mf_cookie_consent";
+        var EVENT = "mf-consent-change";
+
+        function erlaubt() {
+          try {
+            return w.localStorage.getItem(KEY) === "granted";
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function start() {
+          if (w.__mfGtmGestartet) return;
+          w.__mfGtmGestartet = true;
+          w[l].push({
+            event: "consent_granted",
+            ad_storage: "granted",
+            analytics_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted",
+          });
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        }
+
+        w[l] = w[l] || [];
+        w[l].push({
+          event: "default_consent",
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+        });
+
+        if (erlaubt()) start();
+        w.addEventListener(EVENT, function (e) {
+          if (e && e.detail === "granted") start();
+        });
+      })(window, document, "script", "dataLayer", "GTM-NTWB96HL");
+    </script>
+
     <!-- Primary SEO -->
     <title>M. Fischer Bauunternehmen – Tiefbau, Abbruch & Außenanlagen | Rott am Inn</title>
     <meta name="description" content="M. Fischer Bauunternehmen aus Rott am Inn – Tiefbau, Erdarbeiten, Abbruch, Außenanlagen und Baumfällungen im Inntal und Chiemgau. Persönlich. Flexibel. Zuverlässig." />
